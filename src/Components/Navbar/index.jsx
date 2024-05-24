@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-const menu1 = [
+const categories = [
   { to: '/', text: 'Shopi', className: 'font-semibold text-lg' },
   { to: '/', text: 'All', className: '' },
   { to: '/clothes', text: 'Clothes', className: '' },
@@ -10,20 +10,19 @@ const menu1 = [
   { to: '/others', text: 'Others', className: '' }
 ]
 
-const menu2 = [
-  { to: '/email', text: 'juanmer382@gmail.com', className: 'text-black/60' },
-  { to: '/myorders', text: 'My orders', className: '' },
-  { to: '/myoccount', text: 'My occount', className: '' },
-  { to: '/signin', text: 'Sign in', className: '' }
+const userMenu = [
+  { to: '/my-orders', text: 'My orders', className: '' },
+  { to: '/my-account', text: 'My account', className: '' },
+  { to: '/sign-in', text: 'Sign in', className: '' }
 ]
 
 export const Navbar = () => {
   const textDecoration = 'underline underline-offset-4'
   return (
-    <nav className='flex items-center justify-between w-full py-5 px-8 text-sm'>
+    <nav className='flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'>
       <ul className='flex gap-3 items-center'>
         {
-            menu1.map((link, index) => {
+            categories.map((link, index) => {
               return (
                 <li
                   key={index}
@@ -41,8 +40,11 @@ export const Navbar = () => {
         }
       </ul>
       <ul className='flex gap-3 items-center'>
+        <li className='text-black/60'>
+          rubenbot77@hotmail.com
+        </li>
         {
-            menu2.map((link, index) => {
+            userMenu.map((link, index) => {
               return (
                 <li
                   key={index}
@@ -50,7 +52,7 @@ export const Navbar = () => {
                 >
                   <NavLink
                     to={link.to}
-                    className={({ isActive }) => isActive && index ? textDecoration : undefined}
+                    className={({ isActive }) => isActive ? textDecoration : undefined}
                   >
                     {link.text}
                   </NavLink>
