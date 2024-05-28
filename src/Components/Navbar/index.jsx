@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { ShoppingCartContext } from '../../Context'
 
 const categories = [
   { to: '/', text: 'Shopi', className: 'font-semibold text-lg' },
@@ -18,6 +20,9 @@ const userMenu = [
 
 export const Navbar = () => {
   const textDecoration = 'underline underline-offset-4'
+  const {
+    count
+  } = useContext(ShoppingCartContext)
   return (
     <nav className='flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'>
       <ul className='flex gap-3 items-center'>
@@ -60,7 +65,7 @@ export const Navbar = () => {
               )
             })
         }
-        <li>🛒 0</li>
+        <li>🛒 {count}</li>
       </ul>
     </nav>
   )
