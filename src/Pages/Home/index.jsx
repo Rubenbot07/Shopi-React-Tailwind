@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Layout } from '../../Components/Layout'
 import { Card } from '../../Components/Card'
 import { apiURL } from '../../API'
+import { ProductDetail } from '../../Components/ProductDetail'
 
 function Home () {
   const [items, setItems] = useState(null)
@@ -9,7 +10,7 @@ function Home () {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${apiURL}/products`)
+        const response = await fetch(`${apiURL}/products?limit=`)
         const data = await response.json()
         setItems(data)
         console.log(data)
@@ -34,6 +35,7 @@ function Home () {
           })
         }
       </section>
+      <ProductDetail />
     </Layout>
   )
 }

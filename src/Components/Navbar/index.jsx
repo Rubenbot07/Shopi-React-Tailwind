@@ -24,7 +24,7 @@ export const Navbar = () => {
     count
   } = useContext(ShoppingCartContext)
   return (
-    <nav className='flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'>
+    <nav className='bg-white flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'>
       <ul className='flex gap-3 items-center'>
         {
             categories.map((link, index) => {
