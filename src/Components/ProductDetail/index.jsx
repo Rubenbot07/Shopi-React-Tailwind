@@ -1,9 +1,16 @@
+import { useContext } from 'react'
 import { FaCartPlus } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
+import { ShoppingCartContext } from '../../Context'
 export const ProductDetail = () => {
+  const {
+    isProductDetailOpen,
+    handleProductDetail
+  } = useContext(ShoppingCartContext)
   return (
     <section
-      className='flex items-center justify-center fixed top-0 z-10 h-screen w-screen bg-gray-600/60'
+      className={`${isProductDetailOpen ? 'flex' : 'hidden'} items-center justify-center fixed top-0 z-10 h-screen w-screen bg-gray-600/60`}
+      onClick={handleProductDetail}
     >
       <div
         className='flex flex-col bg-white w-3/4 top-1/3 max-w-96 min-w-64 h-96 z-10 rounded-lg md:h-80 md:w-2/3 md:max-w-[500px] lg:w-3/4 lg:max-w-[700px] lg:h-96 md:flex-row'
@@ -26,15 +33,17 @@ export const ProductDetail = () => {
           <div
             className='flex items-center justify-center absolute -top-44 bg-gray-800/60 text-white md:top-2 right-2 md:bg-white md:text-black rounded-full w-8 h-8 text-center text-xl'
           >
-            <IoClose />
+            <IoClose
+              onClick={handleProductDetail}
+            />
           </div>
           <div
             className='flex justify-between w-full px-4 py-2 md:flex-col gap-4'
           >
             <span
-              className='font-semibold text-xl h-8 w-2/4 md:w-3/4 truncate md:text-3xl'
+              className='font-semibold text-xl h-8 max-w-1/3 md:w-3/4 truncate md:text-3xl'
             >
-              Title fjalkdj fjakljdldaf kdajlkfjearraoifjoa
+              Title
             </span>
             <span
               className='text-2xl font-semibold'
@@ -43,7 +52,7 @@ export const ProductDetail = () => {
             </span>
           </div>
           <p
-            className='text-sm p-4 md:text-base'
+            className='text-sm p-4 md:text-base lg:text-xl'
           >
             Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday.
           </p>

@@ -4,12 +4,17 @@ export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({ children }) => {
   const [count, setCount] = useState(0)
-  console.log(count)
+  const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
+  const handleProductDetail = () => {
+    setIsProductDatailOpen(!isProductDetailOpen)
+  }
 
   return (
     <ShoppingCartContext.Provider value={{
       count,
-      setCount
+      setCount,
+      isProductDetailOpen,
+      handleProductDetail
     }}
     >
       {children}
