@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { IoMdAdd } from 'react-icons/io'
 import { ShoppingCartContext } from '../../Context'
 
 export const Card = ({ id, title, price, description, image, category }) => {
@@ -15,7 +16,7 @@ export const Card = ({ id, title, price, description, image, category }) => {
           src={image} alt={description}
         />
         <div className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2' onClick={() => setCount(count + 1)}>
-          +
+          <IoMdAdd />
         </div>
       </figure>
       <p className='flex justify-between gap-1'>
