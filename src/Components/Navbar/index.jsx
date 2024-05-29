@@ -24,8 +24,12 @@ export const Navbar = () => {
     count
   } = useContext(ShoppingCartContext)
   return (
-    <nav className='bg-white flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'>
-      <ul className='flex gap-3 items-center'>
+    <nav
+      className='bg-white flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'
+    >
+      <ul
+        className='flex gap-3 items-center'
+      >
         {
             categories.map((link, index) => {
               return (
@@ -44,8 +48,12 @@ export const Navbar = () => {
             })
         }
       </ul>
-      <ul className='flex gap-3 items-center'>
-        <li className='text-black/60'>
+      <ul
+        className='flex gap-3 items-center'
+      >
+        <li
+          className='text-black/60'
+        >
           rubenbot77@hotmail.com
         </li>
         {
@@ -65,7 +73,9 @@ export const Navbar = () => {
               )
             })
         }
-        <li>🛒 {count}</li>
+        <li>
+          🛒 {count}
+        </li>
       </ul>
     </nav>
   )
