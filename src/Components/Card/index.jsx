@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { IoMdAdd } from 'react-icons/io'
 import { ShoppingCartContext } from '../../Context'
 
@@ -7,12 +7,19 @@ export const Card = (props) => {
     count,
     setCount,
     handleProductDetail,
-    setProductToShow
+    setProductToShow,
+    cartProducts,
+    setCartProducts
   } = useContext(ShoppingCartContext)
 
   const showProduct = () => {
     handleProductDetail()
     setProductToShow(props)
+  }
+  const addProductsToCart = (productData, e) => {
+    e.stopPropagation()
+    setCount(count + 1)
+    setCartProducts([...cartProducts, productData])
   }
   return (
     <div
@@ -33,10 +40,7 @@ export const Card = (props) => {
         />
         <div
           className='absolute top-0 right-0 flex justify-center items-center bg-gray-400/30 w-6 h-6 rounded-full m-2'
-          onClick={(e) => {
-            e.stopPropagation()
-            setCount(count + 1)
-          }}
+          onClick={(e) => addProductsToCart(props, e)}
         >
           <IoMdAdd />
         </div>
