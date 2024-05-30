@@ -74,9 +74,11 @@ export const Navbar = () => {
               )
             })
         }
-        <li className='flex items-center gap-1'>
-          <FaCartPlus />
-          {count}
+        <li className='flex items-center'>
+          <FaCartPlus size='1.3rem' />
+          <sup className={`${count > 0 ? 'bg-green-400/80 text-white rounded-full flex items-center justify-center' : ''} w-5 h-5 p-0.5 text-sm`}>
+            {count}
+          </sup>
         </li>
       </ul>
     </nav>
