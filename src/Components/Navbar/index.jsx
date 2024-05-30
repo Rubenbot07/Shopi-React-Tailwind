@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
+import { FaCartPlus } from 'react-icons/fa'
 import { ShoppingCartContext } from '../../Context'
 
 const categories = [
@@ -73,8 +74,9 @@ export const Navbar = () => {
               )
             })
         }
-        <li>
-          🛒 {count}
+        <li className='flex items-center gap-1'>
+          <FaCartPlus />
+          {count}
         </li>
       </ul>
     </nav>

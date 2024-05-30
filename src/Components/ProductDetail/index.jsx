@@ -42,7 +42,7 @@ export const ProductDetail = () => {
             className='flex justify-between w-full px-4 py-1 md:flex-col gap-4 md:gap-2'
           >
             <span
-              className='font-semibold text-lg md:text-lg md:w-5/6 lg:text-2xl'
+              className='font-semibold text-lg sm:text-xl md:w-5/6 lg:text-2xl'
             >
               {productToShow.title}
             </span>
