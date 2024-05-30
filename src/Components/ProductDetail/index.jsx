@@ -15,7 +15,7 @@ export const ProductDetail = () => {
       <div
         className='flex flex-col bg-white w-5/6 top-1/3 max-w-96 min-w-64 h-80 max-h-80 z-10 rounded-lg md:h-96 md:max-h-96 md:w-3/4 md:max-w-[600px] lg:w-3/4 lg:max-w-[850px] lg:h-96 md:flex-row'
       >
-        <div
+        <figure
           className='relative h-1/2 w-full md:w-1/2 md:h-full md:px-4'
         >
           <img
@@ -27,7 +27,7 @@ export const ProductDetail = () => {
           >
             {productToShow.category}
           </span>
-        </div>
+        </figure>
         <div
           className='flex flex-col justify-between gap-3 relative bg-gray-800 pb-3 md:pt-4 md:w-3/5 h-full rounded-t-2xl rounded-b-lg text-white md:rounded-r-lg md:rounded-l-none'
         >
