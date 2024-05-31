@@ -24,7 +24,9 @@ export const CartMenu = () => {
         </picture>
         <div className='flex items-center gap-2'>
           <span className='font-semibold text-lg'>$99</span>
-          <span>
+          <span
+            onClick={handleCartProducts}
+          >
             <IoClose size='25px' />
           </span>
         </div>
