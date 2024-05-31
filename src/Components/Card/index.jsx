@@ -1,26 +1,19 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { IoMdAdd } from 'react-icons/io'
 import { ShoppingCartContext } from '../../Context'
 
 export const Card = (props) => {
   const {
-    count,
-    setCount,
     handleProductDetail,
     setProductToShow,
-    cartProducts,
-    setCartProducts
+    addProductsToCart
   } = useContext(ShoppingCartContext)
 
   const showProduct = () => {
     handleProductDetail()
     setProductToShow(props)
   }
-  const addProductsToCart = (productData, e) => {
-    e.stopPropagation()
-    setCount(count + 1)
-    setCartProducts([...cartProducts, productData])
-  }
+
   return (
     <div
       className='bg-white cursor-pointer w-56 h-60 rounded-lg'

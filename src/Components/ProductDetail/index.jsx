@@ -6,7 +6,8 @@ export const ProductDetail = () => {
   const {
     isProductDetailOpen,
     handleProductDetail,
-    productToShow
+    productToShow,
+    addProductsToCart
   } = useContext(ShoppingCartContext)
   return (
     <section
@@ -59,6 +60,7 @@ export const ProductDetail = () => {
           </p>
           <button
             className='flex items-center justify-center cursor-pointer gap-2 text-xl py-2 text-center bg-white text-gray-800 rounded-md px-3 w-3/4 self-center font-semibold min-w-36'
+            onClick={() => addProductsToCart(productToShow)}
           >
             <FaCartPlus />
             Add to cart

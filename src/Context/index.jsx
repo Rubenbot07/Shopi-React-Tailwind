@@ -11,7 +11,11 @@ export const ShoppingCartProvider = ({ children }) => {
   const handleProductDetail = () => {
     setIsProductDatailOpen(!isProductDetailOpen)
   }
-
+  const addProductsToCart = (productData, e) => {
+    if (e) e.stopPropagation()
+    setCount(count + 1)
+    setCartProducts([...cartProducts, productData])
+  }
   return (
     <ShoppingCartContext.Provider value={{
       count,
@@ -20,8 +24,7 @@ export const ShoppingCartProvider = ({ children }) => {
       handleProductDetail,
       productToShow,
       setProductToShow,
-      cartProducts,
-      setCartProducts
+      addProductsToCart
     }}
     >
       {children}

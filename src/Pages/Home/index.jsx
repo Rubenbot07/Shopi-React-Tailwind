@@ -13,7 +13,6 @@ function Home () {
         const response = await fetch(`${apiURL}/products?limit=`)
         const data = await response.json()
         setItems(data)
-        console.log(data)
       } catch (error) {
         console.log(`Oh no we have an error: ${error}`)
       }
