@@ -16,7 +16,7 @@ export const Card = (props) => {
 
   return (
     <div
-      className='bg-white cursor-pointer w-56 h-60 rounded-lg'
+      className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2'
       onClick={showProduct}
     >
       <figure

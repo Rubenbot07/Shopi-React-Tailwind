@@ -7,9 +7,14 @@ export const ShoppingCartProvider = ({ children }) => {
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
   const [productToShow, setProductToShow] = useState({})
   const [cartProducts, setCartProducts] = useState([])
+  const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
   useEffect(() => { console.log(cartProducts) }, [cartProducts])
   const handleProductDetail = () => {
     setIsProductDatailOpen(!isProductDetailOpen)
+  }
+  const handleCartProducts = () => {
+    setIsCartProductsOpen(!isCartProductsOpen)
+    console.log(isCartProductsOpen)
   }
   const addProductsToCart = (productData, e) => {
     if (e) e.stopPropagation()
@@ -24,7 +29,9 @@ export const ShoppingCartProvider = ({ children }) => {
       handleProductDetail,
       productToShow,
       setProductToShow,
-      addProductsToCart
+      addProductsToCart,
+      handleCartProducts,
+      isCartProductsOpen
     }}
     >
       {children}

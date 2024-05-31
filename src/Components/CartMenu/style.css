@@ -1,0 +1,13 @@
+/* Works on Firefox */
+.cart {
+    scrollbar-width: thin;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+.cart::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+.cart::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+  }

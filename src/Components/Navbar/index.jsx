@@ -22,7 +22,8 @@ const userMenu = [
 export const Navbar = () => {
   const textDecoration = 'underline underline-offset-4'
   const {
-    count
+    count,
+    handleCartProducts
   } = useContext(ShoppingCartContext)
   return (
     <nav
@@ -74,7 +75,10 @@ export const Navbar = () => {
               )
             })
         }
-        <li className='flex items-center'>
+        <li
+          className='flex items-center'
+          onClick={handleCartProducts}
+        >
           <FaCartPlus size='1.3rem' />
           <sup className={`${count > 0 ? 'bg-green-400/80 text-white rounded-full flex items-center justify-center' : ''} w-5 h-5 p-0.5 text-sm`}>
             {count}
