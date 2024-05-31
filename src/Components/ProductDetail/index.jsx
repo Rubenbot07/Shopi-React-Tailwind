@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { FaCartPlus } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
 import { ShoppingCartContext } from '../../Context'
+import './style.css'
 export const ProductDetail = () => {
   const {
     isProductDetailOpen,
@@ -54,7 +55,7 @@ export const ProductDetail = () => {
             </span>
           </div>
           <p
-            className='max-h-32 overflow-y-auto text-sm pb-8 px-4 md:max-h-72 md:text-base lg:text-xl'
+            className='description max-h-32 overflow-y-auto text-sm pb-8 px-4 md:max-h-72 md:text-base lg:text-xl'
           >
             {productToShow.description}
           </p>
