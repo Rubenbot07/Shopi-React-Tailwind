@@ -33,6 +33,7 @@ export const ShoppingCartProvider = ({ children }) => {
       productToShow,
       setProductToShow,
       cartProducts,
+      setCartProducts,
       addProductsToCart,
       handleCartProducts,
       isCartProductsOpen,
