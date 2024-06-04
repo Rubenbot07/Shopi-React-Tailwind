@@ -5,6 +5,7 @@ export const ShoppingCartContext = createContext()
 export const ShoppingCartProvider = ({ children }) => {
   const [count, setCount] = useState(0)
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
+  const [productQuantity, setProductQuantity] = useState(0)
   const [productToShow, setProductToShow] = useState({})
   const [cartProducts, setCartProducts] = useState([])
   const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
@@ -31,9 +32,12 @@ export const ShoppingCartProvider = ({ children }) => {
       handleProductDetail,
       productToShow,
       setProductToShow,
+      cartProducts,
       addProductsToCart,
       handleCartProducts,
-      isCartProductsOpen
+      isCartProductsOpen,
+      productQuantity,
+      setProductQuantity
     }}
     >
       {children}
