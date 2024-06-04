@@ -11,9 +11,11 @@ export const ShoppingCartProvider = ({ children }) => {
   useEffect(() => { console.log(cartProducts) }, [cartProducts])
   const handleProductDetail = () => {
     setIsProductDatailOpen(!isProductDetailOpen)
+    setIsCartProductsOpen(false)
   }
   const handleCartProducts = () => {
     setIsCartProductsOpen(!isCartProductsOpen)
+    setIsProductDatailOpen(false)
     console.log(isCartProductsOpen)
   }
   const addProductsToCart = (productData, e) => {
