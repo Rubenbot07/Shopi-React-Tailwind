@@ -59,10 +59,14 @@ export const CheckoutSideMenu = () => {
                 </>
                 )
               : (
-                <div className='mx-auto p-5'>
+                <div className='mx-auto p-5 font-semibold'>
                   <LiaCartPlusSolid
                     size='50px'
+                    fill='#9A9B9E'
                   />
+                  <span>
+                    Empty
+                  </span>
                 </div>)
         }
       </div>
