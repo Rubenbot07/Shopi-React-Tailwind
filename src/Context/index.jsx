@@ -22,7 +22,7 @@ export const ShoppingCartProvider = ({ children }) => {
   const addProductsToCart = (productData, e) => {
     if (e) e.stopPropagation()
     setCount(count + 1)
-    setCartProducts([...cartProducts, productData])
+    setCartProducts([...cartProducts, { ...productData, quantity: 1 }])
   }
   return (
     <ShoppingCartContext.Provider value={{

@@ -13,6 +13,7 @@ export const CartMenu = (props) => {
     cartProducts.splice(props.index, 1)
     setCount(count - 1)
   }
+
   return (
     <div className='flex justify-between pb-2 border-b border-black/10'>
       <div className='flex items-center w-3/4 gap-1'>
