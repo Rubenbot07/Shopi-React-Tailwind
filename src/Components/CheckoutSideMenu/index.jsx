@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
+import { totalPrice } from '../../Utils'
 import { CartMenu } from '../CartMenu'
 import { IoClose } from 'react-icons/io5'
 import { LiaCartPlusSolid } from 'react-icons/lia'
@@ -55,7 +56,7 @@ export const CheckoutSideMenu = () => {
                   >
                     Clean Cart
                   </button>
-                  <span className='font-semibold px-4'>$99</span>
+                  <span className='font-semibold px-4'>Total: ${totalPrice(cartProducts)}</span>
                 </>
                 )
               : (
