@@ -21,8 +21,31 @@ export const ShoppingCartProvider = ({ children }) => {
   }
   const addProductsToCart = (productData, e) => {
     if (e) e.stopPropagation()
+    const productInCartIndex = cartProducts.findIndex(item => item.id === productData.id)
+    if (productInCartIndex >= 0) {
+      const newCart = structuredClone(cartProducts)
+      newCart[productInCartIndex].quantity += 1
+      return setCartProducts(newCart)
+    }
+    setCartProducts(prevState => ([
+      ...prevState,
+      {
+        ...productData,
+        quantity: 1
+      }
+    ]))
     setCount(count + 1)
-    setCartProducts([...cartProducts, { ...productData, quantity: 1 }])
+  }
+  const removeProductsToCart = (productData, e) => {
+    if (e) e.stopPropagation()
+    if (productData.quantity > 1) {
+      const productInCartIndex = cartProducts.findIndex(item => item.id === productData.id)
+      const newCart = structuredClone(cartProducts)
+      newCart[productInCartIndex].quantity -= 1
+      return setCartProducts(newCart)
+    }
+    setCartProducts(prevState => prevState.filter(item => item.id !== productData.id))
+    setCount(count - 1)
   }
   return (
     <ShoppingCartContext.Provider value={{
@@ -35,6 +58,7 @@ export const ShoppingCartProvider = ({ children }) => {
       cartProducts,
       setCartProducts,
       addProductsToCart,
+      removeProductsToCart,
       handleCartProducts,
       isCartProductsOpen,
       productQuantity,

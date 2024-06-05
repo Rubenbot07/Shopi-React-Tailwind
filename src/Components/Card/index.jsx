@@ -1,17 +1,41 @@
 import { useContext } from 'react'
 import { IoMdAdd } from 'react-icons/io'
+import { FaCheck } from 'react-icons/fa'
 import { ShoppingCartContext } from '../../Context'
 
 export const Card = (props) => {
   const {
     handleProductDetail,
     setProductToShow,
-    addProductsToCart
+    addProductsToCart,
+    removeProductsToCart,
+    cartProducts
   } = useContext(ShoppingCartContext)
 
   const showProduct = () => {
     handleProductDetail()
     setProductToShow(props)
+  }
+  const checkProductInCart = (id) => {
+    const productAdded = cartProducts.some(item => item.id === id)
+    return (productAdded
+      ? (
+        <div
+          className='absolute top-0 right-0 flex justify-center items-center bg-gray-400/30 w-6 h-6 rounded-full m-2'
+          onClick={(e) => removeProductsToCart(props, e)}
+        >
+          <FaCheck />
+        </div>
+        )
+      : (
+        <div
+          className='absolute top-0 right-0 flex justify-center items-center bg-gray-400/30 w-6 h-6 rounded-full m-2'
+          onClick={(e) => addProductsToCart(props, e)}
+        >
+          <IoMdAdd />
+        </div>
+        )
+    )
   }
 
   return (
@@ -31,12 +55,7 @@ export const Card = (props) => {
           className='w-full h-full object-contain rounded-lg'
           src={props.image} alt={props.description}
         />
-        <div
-          className='absolute top-0 right-0 flex justify-center items-center bg-gray-400/30 w-6 h-6 rounded-full m-2'
-          onClick={(e) => addProductsToCart(props, e)}
-        >
-          <IoMdAdd />
-        </div>
+        {checkProductInCart(props.id)}
       </figure>
       <p
         className='flex justify-between gap-1'

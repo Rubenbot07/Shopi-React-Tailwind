@@ -26,12 +26,14 @@ export const CartMenu = (props) => {
           <div className='flex items-center border w-fit m-2 border-black/20 rounded-md font-semibold'>
             <button
               className='flex items-center justify-center h-6 w-6'
+              onClick={() => props.removeToCart(props)}
             >
               -
             </button>
             <span className='flex items-center justify-center w-6 h-6 bg-slate-200'>{props.quantity}</span>
             <button
               className='flex items-center justify-center h-6 w-6'
+              onClick={() => props.addToCart(props)}
             >
               +
             </button>

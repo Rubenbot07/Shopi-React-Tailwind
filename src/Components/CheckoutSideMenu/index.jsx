@@ -11,7 +11,9 @@ export const CheckoutSideMenu = () => {
     isCartProductsOpen,
     handleCartProducts,
     cartProducts,
-    setCartProducts
+    setCartProducts,
+    addProductsToCart,
+    removeProductsToCart
   } = useContext(ShoppingCartContext)
   const manageCount = () => {
     setCartProducts([])
@@ -35,6 +37,8 @@ export const CheckoutSideMenu = () => {
               {...item}
               index={index}
               quantity={item.quantity}
+              addToCart={addProductsToCart}
+              removeToCart={removeProductsToCart}
             />
           )
         })
