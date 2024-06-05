@@ -41,7 +41,7 @@ export const CartMenu = (props) => {
         </div>
       </div>
       <div className='flex items-center gap-2'>
-        <span className='font-semibold text-lg'>{(props.price * props.quantity).toFixed(1)}</span>
+        <span className='font-semibold text-lg'>{`$${(props.price * props.quantity).toFixed(1)}`}</span>
         <span
           onClick={deleteFromCart}
         >

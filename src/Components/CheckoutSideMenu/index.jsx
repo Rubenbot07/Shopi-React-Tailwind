@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import { CartMenu } from '../CartMenu'
 import { IoClose } from 'react-icons/io5'
+import { LiaCartPlusSolid } from 'react-icons/lia'
 import './style.css'
 
 export const CheckoutSideMenu = () => {
@@ -45,17 +46,24 @@ export const CheckoutSideMenu = () => {
       }
       <div className='flex justify-between items-center'>
         {
-            count > 0 && (
-              <>
-                <button
-                  className='font-semibold border border-red-400/85 text-red-400/85 px-3 rounded-md'
-                  onClick={manageCount}
-                >
-                  Clean Cart
-                </button>
-                <span className='font-semibold px-4'>$99</span>
-              </>
-            )
+            count > 0
+              ? (
+                <>
+                  <button
+                    className='font-semibold border border-red-400/85 text-red-400/85 px-3 rounded-md'
+                    onClick={manageCount}
+                  >
+                    Clean Cart
+                  </button>
+                  <span className='font-semibold px-4'>$99</span>
+                </>
+                )
+              : (
+                <div className='mx-auto p-5'>
+                  <LiaCartPlusSolid
+                    size='50px'
+                  />
+                </div>)
         }
       </div>
     </section>
