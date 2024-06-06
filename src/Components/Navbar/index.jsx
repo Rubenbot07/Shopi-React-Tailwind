@@ -76,7 +76,7 @@ export const Navbar = () => {
             })
         }
         <li
-          className='flex items-center'
+          className='flex items-center cursor-pointer'
           onClick={handleCartProducts}
         >
           <FaCartPlus size='1.3rem' />
