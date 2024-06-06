@@ -16,6 +16,7 @@ export const CheckoutSideMenu = () => {
     setCartProducts,
     addProductsToCart,
     removeProductsToCart,
+    order,
     setOrder
   } = useContext(ShoppingCartContext)
   const manageCount = () => {
@@ -29,7 +30,7 @@ export const CheckoutSideMenu = () => {
       totalProduct: cartProducts.length,
       totalPrice: totalPrice(cartProducts)
     }
-    setOrder(orderToAdd)
+    setOrder([...order, orderToAdd])
     setCartProducts([])
     setCount(0)
   }
