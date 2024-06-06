@@ -15,13 +15,24 @@ export const CheckoutSideMenu = () => {
     cartProducts,
     setCartProducts,
     addProductsToCart,
-    removeProductsToCart
+    removeProductsToCart,
+    setOrder
   } = useContext(ShoppingCartContext)
   const manageCount = () => {
     setCartProducts([])
     setCount(0)
   }
-
+  const handleCheckout = () => {
+    const orderToAdd = {
+      date: '01.02.24',
+      products: cartProducts,
+      totalProduct: cartProducts.length,
+      totalPrice: totalPrice(cartProducts)
+    }
+    setOrder(orderToAdd)
+    setCartProducts([])
+    setCount(0)
+  }
   return (
     <section className={`${isCartProductsOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[80%] overflow-y-auto min-h-48 shadow-lg top-16 px-4 pt-6 pb-3 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto`}>
       <span
@@ -63,7 +74,12 @@ export const CheckoutSideMenu = () => {
                       Total: ${totalPrice(cartProducts)}
                     </span>
                   </div>
-                  <button className='self-center font-semibold bg-black/80 text-white h-8 rounded-md w-full'>Checkout</button>
+                  <button
+                    className='self-center font-semibold bg-black/80 text-white h-8 rounded-md w-full'
+                    onClick={handleCheckout}
+                  >
+                    Checkout
+                  </button>
                 </>
                 )
               : (

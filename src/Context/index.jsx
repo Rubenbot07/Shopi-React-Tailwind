@@ -9,6 +9,7 @@ export const ShoppingCartProvider = ({ children }) => {
   const [productToShow, setProductToShow] = useState({})
   const [cartProducts, setCartProducts] = useState([])
   const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
+  const [order, setOrder] = useState([])
   useEffect(() => { console.log(cartProducts) }, [cartProducts])
   const handleProductDetail = () => {
     setIsProductDatailOpen(!isProductDetailOpen)
@@ -62,7 +63,9 @@ export const ShoppingCartProvider = ({ children }) => {
       handleCartProducts,
       isCartProductsOpen,
       productQuantity,
-      setProductQuantity
+      setProductQuantity,
+      order,
+      setOrder
     }}
     >
       {children}
