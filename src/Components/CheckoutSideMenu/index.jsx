@@ -28,7 +28,7 @@ export const CheckoutSideMenu = () => {
     const orderToAdd = {
       date: '01.02.24',
       products: cartProducts,
-      totalProduct: cartProducts.length,
+      totalProducts: cartProducts.length,
       totalPrice: totalPrice(cartProducts)
     }
     setOrder([...order, orderToAdd])
