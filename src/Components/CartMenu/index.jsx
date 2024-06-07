@@ -16,11 +16,13 @@ export const CartMenu = (props) => {
 
   return (
     <div className='flex justify-between pb-2 border-b border-black/10'>
-      <div className='flex items-center w-3/4 gap-1'>
-        <img
-          className='w-2/4 rounded-md object-contain h-2/3 border border-black/10 p-2'
-          src={props.image} alt={props.title}
-        />
+      <div className='flex items-center w-3/4 gap-2'>
+        <picture className='min-w-20 px-1 h-full bg-white rounded-md'>
+          <img
+            className='w-20 h-20 min-w-20 object-contain rounded-md p-2'
+            src={props.image} alt={props.title}
+          />
+        </picture>
         <div>
           <span className='text-md line-clamp-1'>{props.title}</span>
           <div className='flex items-center border w-fit m-2 border-black/20 rounded-md font-semibold'>
