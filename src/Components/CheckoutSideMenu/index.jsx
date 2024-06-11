@@ -25,8 +25,9 @@ export const CheckoutSideMenu = () => {
     setCount(0)
   }
   const handleCheckout = () => {
+    const date = new Date()
     const orderToAdd = {
-      date: '01.02.24',
+      date: date.toDateString(),
       products: cartProducts,
       totalProducts: cartProducts.length,
       totalPrice: totalPrice(cartProducts)
