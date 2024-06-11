@@ -14,7 +14,7 @@ function MyOrders () {
       <div className='flex flex-col items-center gap-5'>
         <h2>My Orders</h2>
         {
-            order.length > 0
+            order?.length > 0
               ? (order.map((item, index) => {
                   return (
                     <Link

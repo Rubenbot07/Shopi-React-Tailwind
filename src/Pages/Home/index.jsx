@@ -1,24 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useContext } from 'react'
 import { Layout } from '../../Components/Layout'
 import { Card } from '../../Components/Card'
-import { apiURL } from '../../API'
 import { ProductDetail } from '../../Components/ProductDetail'
+import { ShoppingCartContext } from '../../Context'
 
 function Home () {
-  const [items, setItems] = useState(null)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${apiURL}/products?limit=`)
-        const data = await response.json()
-        setItems(data)
-      } catch (error) {
-        console.log(`Oh no we have an error: ${error}`)
-      }
-    }
-    fetchData()
-  }, [])
+  const {
+    items
+  } = useContext(ShoppingCartContext)
   return (
     <Layout>
       Home

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import { apiURL } from '../../API'
 
 export const ShoppingCartContext = createContext()
 
@@ -11,6 +12,20 @@ export const ShoppingCartProvider = ({ children }) => {
   const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
   const [order, setOrder] = useState([])
   useEffect(() => { console.log(cartProducts) }, [cartProducts])
+  // Feching data
+  const [items, setItems] = useState(null)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${apiURL}/products?limit=`)
+        const data = await response.json()
+        setItems(data)
+      } catch (error) {
+        console.log(`Oh no we have an error: ${error}`)
+      }
+    }
+    fetchData()
+  }, [])
   const handleProductDetail = () => {
     setIsProductDatailOpen(!isProductDetailOpen)
     setIsCartProductsOpen(false)
@@ -65,7 +80,9 @@ export const ShoppingCartProvider = ({ children }) => {
       productQuantity,
       setProductQuantity,
       order,
-      setOrder
+      setOrder,
+      items,
+      setItems
     }}
     >
       {children}
