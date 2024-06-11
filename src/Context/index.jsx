@@ -4,12 +4,8 @@ import { apiURL } from '../API'
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({ children }) => {
-  const [count, setCount] = useState(0)
-  const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
-  const [productQuantity, setProductQuantity] = useState(0)
   const [productToShow, setProductToShow] = useState({})
   const [cartProducts, setCartProducts] = useState([])
-  const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
   const [order, setOrder] = useState([])
   useEffect(() => { console.log(cartProducts) }, [cartProducts])
   // Feching data
@@ -26,15 +22,22 @@ export const ShoppingCartProvider = ({ children }) => {
     }
     fetchData()
   }, [])
+  // Handle Product Detail
+  const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
   const handleProductDetail = () => {
     setIsProductDatailOpen(!isProductDetailOpen)
     setIsCartProductsOpen(false)
   }
+  // Handle Shopping cart
+  const [count, setCount] = useState(0)
+  const [productQuantity, setProductQuantity] = useState(0)
+  const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
   const handleCartProducts = () => {
     setIsCartProductsOpen(!isCartProductsOpen)
     setIsProductDatailOpen(false)
     console.log(isCartProductsOpen)
   }
+  // Adding products to Shopping cart
   const addProductsToCart = (productData, e) => {
     if (e) e.stopPropagation()
     const productInCartIndex = cartProducts.findIndex(item => item.id === productData.id)
@@ -52,6 +55,7 @@ export const ShoppingCartProvider = ({ children }) => {
     ]))
     setCount(count + 1)
   }
+  // Removing Products from Shopping cart
   const removeProductsToCart = (productData, e) => {
     if (e) e.stopPropagation()
     if (productData.quantity > 1) {
@@ -63,6 +67,16 @@ export const ShoppingCartProvider = ({ children }) => {
     setCartProducts(prevState => prevState.filter(item => item.id !== productData.id))
     setCount(count - 1)
   }
+  // Show item by search
+  const [searchByTitle, setSearchByTitle] = useState(null)
+  const [filteredItems, setFilteredItems] = useState(null)
+  const filteredItemsByTitle = (items, searchByTitle) => {
+    return items?.filter(item => item.title.toLowerCase().includes(searchByTitle))
+  }
+  useEffect(() => {
+    if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
+  }, [items, searchByTitle])
+
   return (
     <ShoppingCartContext.Provider value={{
       count,
@@ -82,7 +96,10 @@ export const ShoppingCartProvider = ({ children }) => {
       order,
       setOrder,
       items,
-      setItems
+      setItems,
+      searchByTitle,
+      setSearchByTitle,
+      filteredItems
     }}
     >
       {children}
