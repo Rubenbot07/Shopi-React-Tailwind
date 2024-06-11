@@ -15,7 +15,7 @@ export const CartMenu = (props) => {
   }
 
   return (
-    <div className='flex justify-between pb-2 border-b border-black/10'>
+    <div className='w-[90%] flex justify-between pb-2 border-b border-black/10'>
       <div className='flex items-center w-3/4 gap-2'>
         <picture className='min-w-20 px-1 h-full bg-white rounded-md'>
           <img
@@ -24,7 +24,7 @@ export const CartMenu = (props) => {
           />
         </picture>
         <div>
-          <span className='text-md line-clamp-1'>{props.title}</span>
+          <span className='text-sm w-2/3 line-clamp-1'>{props.title}</span>
           <div className='flex items-center border w-fit m-2 border-black/20 rounded-md font-semibold'>
             <button
               className='flex items-center justify-center h-6 w-6'
@@ -42,13 +42,13 @@ export const CartMenu = (props) => {
           </div>
         </div>
       </div>
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-2 relative'>
         <span className='font-semibold text-lg'>{`$${(props.price * props.quantity).toFixed(1)}`}</span>
         <span
-          className='cursor-pointer'
+          className='cursor-pointer p-1 absolute top-7 -right-8 bg-gray-400/30 rounded-full'
           onClick={deleteFromCart}
         >
-          <IoClose size='25px' />
+          <IoClose size='15px' />
         </span>
       </div>
     </div>

@@ -12,39 +12,39 @@ export const ProductDetail = () => {
   } = useContext(ShoppingCartContext)
   return (
     <section
-      className={`${isProductDetailOpen ? 'flex' : 'hidden'} items-center justify-center fixed top-0 z-10 h-screen w-screen bg-gray-600/60`}
+      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[85%] overflow-y-auto min-h-48 shadow-lg top-20 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto`}
     >
-      <div
-        className='flex flex-col bg-white w-5/6 top-1/3 max-w-96 min-w-64 h-80 max-h-80 z-10 rounded-lg md:h-96 md:max-h-96 md:w-3/4 md:max-w-[600px] lg:w-3/4 lg:max-w-[850px] lg:h-96 md:flex-row'
-      >
+      <div className='pt-4'>
+        <h3 className='text-center text-lg font-semibold'>Product Detail</h3>
         <figure
-          className='relative h-1/2 w-full md:w-1/2 md:h-full md:px-4'
+          className='relative p-4 h-60 min-h-60 bg-white'
         >
           <img
-            className='h-full w-full object-contain md:w-full'
+            className='w-full h-full object-contain'
             src={productToShow.image} alt={productToShow.title}
           />
           <span
-            className='absolute bottom-0 left-0 bg-green-400/80 rounded-t-lg text-black text-base px-2 py-0.5 ml-4 md:text-xl md:ml-1'
+            className='bg-green-400/80 px-4 py-0.5 rounded-md absolute bottom-2 left-3'
           >
             {productToShow.category}
           </span>
         </figure>
         <div
-          className='flex flex-col justify-between gap-3 relative bg-gray-800 pb-3 md:pt-4 md:w-3/5 h-full rounded-t-2xl rounded-b-lg text-white md:rounded-r-lg md:rounded-l-none'
+          className='flex flex-col gap-4 bg-gray-400/5 w-[95%] mx-auto px-5 pt-4 pb-8 rounded-lg'
         >
           <div
-            className='flex items-center justify-center cursor-pointer absolute -top-36 bg-gray-800/80 text-white md:top-2 right-2 md:bg-white md:text-black rounded-full w-8 h-8 text-center text-xl'
+            className='absolute top-2 right-2 bg-gray-400/30 rounded-full p-1 cursor-pointer'
           >
             <IoClose
+              size='1.5rem'
               onClick={handleProductDetail}
             />
           </div>
           <div
-            className='flex justify-between w-full px-4 py-1 md:flex-col gap-4 md:gap-2'
+            className='flex justify-between'
           >
             <span
-              className='font-semibold text-lg sm:text-xl md:w-5/6 lg:text-2xl'
+              className='text-lg font-semibold w-2/3'
             >
               {productToShow.title}
             </span>
@@ -55,12 +55,12 @@ export const ProductDetail = () => {
             </span>
           </div>
           <p
-            className='description max-h-32 overflow-y-auto text-sm pb-8 px-4 md:max-h-72 md:text-base lg:text-xl'
+            className='text-md font-thin'
           >
             {productToShow.description}
           </p>
           <button
-            className='flex items-center justify-center cursor-pointer gap-2 text-xl py-2 text-center bg-white text-gray-800 rounded-md px-3 w-3/4 self-center font-semibold min-w-36'
+            className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1'
             onClick={() => addProductsToCart(productToShow)}
           >
             <FaCartPlus />
