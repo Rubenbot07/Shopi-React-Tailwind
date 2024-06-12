@@ -4,13 +4,12 @@ import { FaCartPlus } from 'react-icons/fa'
 import { ShoppingCartContext } from '../../Context'
 
 const categories = [
-  { to: '/', text: 'Shopi', className: 'font-semibold text-lg' },
-  { to: '/', text: 'All', className: '' },
-  { to: '/clothes', text: 'Clothes', className: '' },
-  { to: '/electronics', text: 'Electronics', className: '' },
-  { to: '/furnitures', text: 'Furnitures', className: '' },
-  { to: '/toys', text: 'Toys', className: '' },
-  { to: '/others', text: 'Others', className: '' }
+  { to: '/', categoryName: null, text: 'Shopi', className: 'font-semibold text-lg' },
+  { to: '/', categoryName: null, text: 'All', className: '' },
+  { to: '/category/men\'s-clothing', categoryName: 'men\'s clothing', text: 'Men\'s Clothes', className: '' },
+  { to: '/category/women\'s-clothing', categoryName: 'women\'s clothing', text: 'Women\'s Clothes', className: '' },
+  { to: '/category/electronics', categoryName: 'electronics', text: 'Electronics', className: '' },
+  { to: '/category/jewelery', categoryName: 'jewelery', text: 'Jewelery', className: '' }
 ]
 
 const userMenu = [
@@ -23,8 +22,13 @@ export const Navbar = () => {
   const textDecoration = 'underline underline-offset-4'
   const {
     count,
-    handleCartProducts
+    handleCartProducts,
+    setSearchByCategory
   } = useContext(ShoppingCartContext)
+
+  const handleCategories = (category) => {
+    setSearchByCategory(category)
+  }
   return (
     <nav
       className='bg-white flex items-center justify-between fixed top-0 z-10 w-full py-5 px-8 text-sm'
@@ -41,6 +45,7 @@ export const Navbar = () => {
                 >
                   <NavLink
                     to={link.to}
+                    onClick={() => handleCategories(link.categoryName)}
                     className={({ isActive }) => isActive && index !== 0 ? textDecoration : undefined}
                   >
                     {link.text}

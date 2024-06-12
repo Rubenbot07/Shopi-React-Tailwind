@@ -9,10 +9,11 @@ function Home () {
     items,
     searchByTitle,
     setSearchByTitle,
-    filteredItems
+    filteredItems,
+    searchByCategory
   } = useContext(ShoppingCartContext)
   const renderView = () => {
-    if (searchByTitle?.length > 0) {
+    if (searchByTitle?.length > 0 || searchByCategory?.length > 0) {
       if (filteredItems?.length > 0) {
         return (
           filteredItems?.map(item => {
