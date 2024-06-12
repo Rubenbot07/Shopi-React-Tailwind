@@ -80,8 +80,9 @@ export const ShoppingCartProvider = ({ children }) => {
   }
   useEffect(() => {
     if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
-    if (searchByCategory) setFilteredItems(filteredItemsByCategory(items, searchByCategory))
-  }, [items, searchByTitle, searchByCategory])
+    if (searchByCategory && !searchByTitle) setFilteredItems(filteredItemsByCategory(items, searchByCategory))
+    if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByTitle(filteredItems, searchByTitle))
+  }, [items, searchByTitle, searchByCategory, filteredItems])
 
   return (
     <ShoppingCartContext.Provider value={{

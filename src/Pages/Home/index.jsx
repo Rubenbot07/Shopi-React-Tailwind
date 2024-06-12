@@ -13,7 +13,7 @@ function Home () {
     searchByCategory
   } = useContext(ShoppingCartContext)
   const renderView = () => {
-    if (searchByTitle?.length > 0 || searchByCategory?.length > 0) {
+    if (searchByCategory?.length > 0 || searchByTitle?.length > 0) {
       if (filteredItems?.length > 0) {
         return (
           filteredItems?.map(item => {
