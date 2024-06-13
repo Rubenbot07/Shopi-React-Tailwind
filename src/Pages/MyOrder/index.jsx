@@ -25,7 +25,7 @@ function MyOrder () {
               />
             </span>
           </Link>
-          <h2>My Order</h2>
+          <h2 className='font-semibold text-xl'>My Order</h2>
         </div>
         {
           order?.[index]?.products?.map((item) => {

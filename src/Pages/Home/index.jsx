@@ -53,7 +53,7 @@ function Home () {
 
   return (
     <Layout>
-      <h1>Home</h1>
+      <h1 className='font-semibold text-xl'>Home</h1>
       <input
         type='search'
         placeholder='Search Product'
