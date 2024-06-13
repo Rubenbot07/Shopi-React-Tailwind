@@ -23,11 +23,13 @@ export const Navbar = () => {
   const {
     count,
     handleCartProducts,
-    setSearchByCategory
+    setSearchByCategory,
+    setSearchByTitle
   } = useContext(ShoppingCartContext)
 
   const handleCategories = (category) => {
     setSearchByCategory(category)
+    setSearchByTitle(null)
   }
   return (
     <nav
