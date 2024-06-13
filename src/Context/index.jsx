@@ -29,7 +29,6 @@ export const ShoppingCartProvider = ({ children }) => {
     setIsCartProductsOpen(false)
   }
   // Handle Shopping cart
-  const [count, setCount] = useState(0)
   const [productQuantity, setProductQuantity] = useState(0)
   const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
   const handleCartProducts = () => {
@@ -53,7 +52,6 @@ export const ShoppingCartProvider = ({ children }) => {
         quantity: 1
       }
     ]))
-    setCount(count + 1)
   }
   // Removing Products from Shopping cart
   const removeProductsToCart = (productData, e) => {
@@ -65,7 +63,6 @@ export const ShoppingCartProvider = ({ children }) => {
       return setCartProducts(newCart)
     }
     setCartProducts(prevState => prevState.filter(item => item.id !== productData.id))
-    setCount(count - 1)
   }
   // Show item by search
   const [searchByTitle, setSearchByTitle] = useState(null)
@@ -86,8 +83,6 @@ export const ShoppingCartProvider = ({ children }) => {
 
   return (
     <ShoppingCartContext.Provider value={{
-      count,
-      setCount,
       isProductDetailOpen,
       handleProductDetail,
       productToShow,

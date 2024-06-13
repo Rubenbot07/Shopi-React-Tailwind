@@ -9,8 +9,6 @@ import './style.css'
 
 export const CheckoutSideMenu = () => {
   const {
-    count,
-    setCount,
     isCartProductsOpen,
     handleCartProducts,
     cartProducts,
@@ -22,7 +20,6 @@ export const CheckoutSideMenu = () => {
   } = useContext(ShoppingCartContext)
   const manageCount = () => {
     setCartProducts([])
-    setCount(0)
   }
   const handleCheckout = () => {
     const date = new Date()
@@ -34,7 +31,6 @@ export const CheckoutSideMenu = () => {
     }
     setOrder([...order, orderToAdd])
     setCartProducts([])
-    setCount(0)
     handleCartProducts(false)
   }
   return (
@@ -62,7 +58,7 @@ export const CheckoutSideMenu = () => {
       }
       <div className='flex flex-col justify-between gap-4'>
         {
-            count > 0
+            cartProducts?.length > 0
               ? (
                 <>
                   <div className='flex justify-between'>

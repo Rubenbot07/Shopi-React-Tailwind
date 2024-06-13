@@ -4,14 +4,11 @@ import { IoClose } from 'react-icons/io5'
 
 export const CartMenu = (props) => {
   const {
-    count,
-    setCount,
-    cartProducts
+    cartProducts,
+    removeProductsToCart
   } = useContext(ShoppingCartContext)
   const deleteFromCart = () => {
-    console.log(props.index)
-    cartProducts.splice(props.index, 1)
-    setCount(count - 1)
+    removeProductsToCart(cartProducts.splice(props.index, 1))
   }
 
   return (

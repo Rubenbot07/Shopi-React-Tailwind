@@ -21,7 +21,7 @@ const userMenu = [
 export const Navbar = () => {
   const textDecoration = 'underline underline-offset-4'
   const {
-    count,
+    cartProducts,
     handleCartProducts,
     setSearchByCategory,
     setSearchByTitle
@@ -87,8 +87,8 @@ export const Navbar = () => {
           onClick={handleCartProducts}
         >
           <FaCartPlus size='1.3rem' />
-          <sup className={`${count > 0 ? 'bg-green-400/80 text-white rounded-full flex items-center justify-center' : ''} w-5 h-5 p-0.5 text-sm`}>
-            {count}
+          <sup className={`${cartProducts.length > 0 ? 'bg-green-400/80 text-white rounded-full flex items-center justify-center' : ''} w-5 h-5 p-0.5 text-sm`}>
+            {cartProducts ? cartProducts.length : 0}
           </sup>
         </li>
       </ul>
