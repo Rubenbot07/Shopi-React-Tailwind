@@ -79,10 +79,10 @@ export const ShoppingCartProvider = ({ children }) => {
     return items?.filter(item => item.category.toLowerCase() === searchByCategory)
   }
   useEffect(() => {
-    if (searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
+    if (searchByTitle && !searchByCategory) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
     if (searchByCategory && !searchByTitle) setFilteredItems(filteredItemsByCategory(items, searchByCategory))
     if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByTitle(filteredItems, searchByTitle))
-  }, [items, searchByTitle, searchByCategory, filteredItems])
+  }, [items, searchByTitle, searchByCategory])
 
   return (
     <ShoppingCartContext.Provider value={{

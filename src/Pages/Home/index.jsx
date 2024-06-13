@@ -3,6 +3,7 @@ import { Layout } from '../../Components/Layout'
 import { Card } from '../../Components/Card'
 import { ProductDetail } from '../../Components/ProductDetail'
 import { ShoppingCartContext } from '../../Context'
+import { LuSearchX } from 'react-icons/lu'
 
 function Home () {
   const {
@@ -27,7 +28,13 @@ function Home () {
         )
       } else {
         return (
-          <div className='text-center absolute text-lg font-semibold'>No results</div>
+          <div className='flex flex-col items-center text-center absolute top-1/3 text-lg font-semibold'>
+            <LuSearchX
+              size='50px'
+              color='#9A9B9E'
+            />
+            <span>No results</span>
+          </div>
         )
       }
     } else {
