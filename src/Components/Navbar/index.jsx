@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
-import { FaCartPlus } from 'react-icons/fa'
+import { FaCartPlus, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { TiThMenu } from 'react-icons/ti'
 
 const categories = [
@@ -35,7 +35,7 @@ export const Navbar = () => {
       className='bg-white flex items-center  fixed top-0 z-10 w-full py-3 px-4 lg:px-8 text-sm border-b border-black/20 shadow-sm'
     >
       <section className='flex items-center w-screen justify-center lg:w-auto lg:justify-start'>
-        <div className='lg:hidden absolute left-2'>
+        <div className='lg:hidden absolute left-2 cursor-pointer'>
           <TiThMenu size='1.5rem' onClick={() => setIsMenuOpen(!isMenuOpen)} />
         </div>
         <div
@@ -49,9 +49,9 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </section>
-      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md xl:text-lg`}>
+      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md xl:text-lg`}>
         <ul
-          className='flex flex-col lg:gap-4 lg:flex-row lg:px-2'
+          className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row lg:px-2'
         >
           <li className='font-semibold text-lg lg:hidden'>Categories</li>
           {
@@ -73,7 +73,7 @@ export const Navbar = () => {
           }
         </ul>
         <ul
-          className='flex flex-col lg:gap-4 lg:flex-row lg:px-2'
+          className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row lg:px-2'
         >
           <li className='font-semibold text-lg lg:hidden'>Account</li>
           <li>

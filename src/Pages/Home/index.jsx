@@ -61,7 +61,7 @@ function Home () {
         onChange={(event) => setSearchByTitle(event.target.value)}
       />
       <section
-        className='grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-screen-xl p-5'
+        className='grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-screen-xl px-5 pb-12 pt-5'
       >
         {renderView()}
       </section>
