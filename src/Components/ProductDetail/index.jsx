@@ -12,7 +12,7 @@ export const ProductDetail = () => {
   } = useContext(ShoppingCartContext)
   return (
     <section
-      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[85%] overflow-y-auto min-h-48 shadow-lg top-[85px] md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto`}
+      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[85%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-16 md:top-24 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto`}
     >
       <div className='pt-4'>
         <h3 className='text-center text-lg font-semibold'>Product Detail</h3>

@@ -57,7 +57,7 @@ function Home () {
       <input
         type='search'
         placeholder='Search Product'
-        className='border border-black w-80 rounded-md p-2 text-center focus:outline-none'
+        className='border border-black sm:w-80 rounded-md p-2 text-center focus:outline-none'
         onChange={(event) => setSearchByTitle(event.target.value)}
       />
       <section
