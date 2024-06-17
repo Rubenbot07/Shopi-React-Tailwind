@@ -23,7 +23,7 @@ export const Card = (props) => {
     return (productAdded
       ? (
         <div
-          className='absolute top-0 right-0 flex justify-center items-center bg-gray-400/30 w-6 h-6 rounded-full m-2'
+          className='absolute top-0 right-0 flex justify-center items-center bg-gray-200 w-6 h-6 rounded-full m-2 hover:bg-gray-300'
           onClick={(e) => removeProductsToCart(props, e)}
         >
           <FaCheck />
@@ -31,7 +31,7 @@ export const Card = (props) => {
         )
       : (
         <div
-          className='absolute top-0 right-0 flex justify-center items-center bg-gray-400/30 w-6 h-6 rounded-full m-2'
+          className='absolute top-0 right-0 flex justify-center items-center bg-gray-200 w-6 h-6 rounded-full m-2 hover:bg-gray-300'
           onClick={(e) => addProductsToCart(props, e)}
         >
           <IoMdAdd />
@@ -42,7 +42,7 @@ export const Card = (props) => {
 
   return (
     <div
-      className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2'
+      className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2 hover:scale-105 '
       onClick={showProduct}
     >
       <figure

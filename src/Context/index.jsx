@@ -7,7 +7,6 @@ export const ShoppingCartProvider = ({ children }) => {
   const [productToShow, setProductToShow] = useState({})
   const [cartProducts, setCartProducts] = useState([])
   const [order, setOrder] = useState([])
-  useEffect(() => { console.log(cartProducts) }, [cartProducts])
   // Feching data
   const [items, setItems] = useState(null)
   useEffect(() => {

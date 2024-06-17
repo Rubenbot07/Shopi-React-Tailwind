@@ -18,7 +18,7 @@ const userMenu = [
 ]
 
 export const Navbar = () => {
-  const textDecoration = 'underline underline-offset-4'
+  const textDecoration = 'bg-gray-200 rounded px-1'
   const {
     cartProducts,
     handleCartProducts,
@@ -68,6 +68,7 @@ export const Navbar = () => {
                 return (
                   <li
                     key={index}
+                    className='rounded-md hover:bg-gray-100 px-1'
                   >
                     <NavLink
                       to={link.to}
@@ -85,7 +86,7 @@ export const Navbar = () => {
           className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row lg:px-2'
         >
           <li className='font-semibold text-lg lg:hidden'>Account</li>
-          <li className='text-slate-400'>
+          <li className='text-slate-400 rounded-md'>
             rubenbot77@hotmail.com
           </li>
           {
@@ -93,6 +94,8 @@ export const Navbar = () => {
                 return (
                   <li
                     key={index}
+                    onClick={() => handleCategories()}
+                    className='rounded-md hover:bg-gray-100 px-1'
                   >
                     <NavLink
                       to={link.to}
@@ -104,7 +107,7 @@ export const Navbar = () => {
                 )
               })
           }
-          <li>Sign Out</li>
+          <li className='rounded-md hover:bg-gray-100 px-1'>Sign Out</li>
         </ul>
       </section>
       <div

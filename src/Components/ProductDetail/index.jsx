@@ -33,7 +33,7 @@ export const ProductDetail = () => {
           className='flex flex-col gap-4 bg-gray-400/5 w-[95%] mx-auto px-5 pt-4 pb-8 rounded-lg'
         >
           <div
-            className='absolute top-2 right-2 bg-gray-400/30 rounded-full p-1 cursor-pointer'
+            className='absolute top-2 right-2 bg-gray-400/30 rounded-full p-1 cursor-pointer hover:bg-gray-400/50'
           >
             <IoClose
               size='1.5rem'
@@ -60,7 +60,7 @@ export const ProductDetail = () => {
             {productToShow.description}
           </p>
           <button
-            className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1'
+            className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1 hover:scale-105 active:scale-95'
             onClick={() => addProductsToCart(productToShow)}
           >
             <FaCartPlus />

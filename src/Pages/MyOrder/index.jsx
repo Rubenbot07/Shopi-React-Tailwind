@@ -13,7 +13,6 @@ function MyOrder () {
   const currentPath = window.location.pathname
   let index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
   if (index === 'last') { index = order.length - 1 }
-  console.log(index)
   return (
     <Layout>
       <div className='w-2/3 max-w-[700px] min-w-80 flex flex-col items-center gap-5 pb-12'>
