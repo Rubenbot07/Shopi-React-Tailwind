@@ -2,7 +2,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 export const Footer = () => {
   return (
-    <section className='flex flex-col gap-4 w-screen absolute bg-gray-100 py-4 px-2 md:items-center lg:flex-row lg:flex-wrap lg:justify-center'>
+    <section className='flex flex-col gap-4 w-full absolute bg-gray-100 py-4 px-2 md:items-center lg:flex-row lg:flex-wrap lg:justify-center'>
       <div>
         <span className='block text-xl font-semibold text-gray-800 md:text-3xl lg:w-screen lg:text-center'>Shopi</span>
       </div>
@@ -16,7 +16,7 @@ export const Footer = () => {
         <FaInstagram fill='black' className='size-5 md:size-8' />
         <FaLinkedin fill='black' className='size-5 md:size-8' />
       </div>
-      <hr className='w-screen bg-gray-400 h-0.5' />
+      <hr className='w-full bg-gray-400 h-0.5' />
       <span className='text-gray-800 text-sm lg:w-screen lg:text-center'>© 2024, Dosquebradas - Colombia Todos los derechos reservados</span>
     </section>
   )

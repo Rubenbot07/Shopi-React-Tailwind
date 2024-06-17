@@ -19,7 +19,7 @@ function MyOrder () {
       <div className='w-full flex flex-col items-center gap-5 pb-12'>
         <div className='flex items-center justify-center relative w-2/3 max-w-[700px] min-w-80'>
           <Link to='/my-orders'>
-            <span className='absolute left-1 top-0'>
+            <span className='absolute left-1 top-1'>
               <FaChevronLeft
                 size='20px'
               />
