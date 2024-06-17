@@ -34,7 +34,7 @@ export const ShoppingCartProvider = ({ children }) => {
   const handleCartProducts = () => {
     setIsCartProductsOpen(!isCartProductsOpen)
     setIsProductDatailOpen(false)
-    console.log(isCartProductsOpen)
+    setIsMenuOpen(false)
   }
   // Adding products to Shopping cart
   const addProductsToCart = (productData, e) => {
@@ -81,14 +81,19 @@ export const ShoppingCartProvider = ({ children }) => {
     if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByTitle(filteredItems, searchByTitle))
   }, [items, searchByTitle, searchByCategory])
 
+  // Manage burger menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <ShoppingCartContext.Provider value={{
       isProductDetailOpen,
       handleProductDetail,
+      setIsProductDatailOpen,
       productToShow,
       setProductToShow,
       cartProducts,
       setCartProducts,
+      setIsCartProductsOpen,
       addProductsToCart,
       removeProductsToCart,
       handleCartProducts,
@@ -103,7 +108,9 @@ export const ShoppingCartProvider = ({ children }) => {
       setSearchByTitle,
       filteredItems,
       searchByCategory,
-      setSearchByCategory
+      setSearchByCategory,
+      isMenuOpen,
+      setIsMenuOpen
     }}
     >
       {children}

@@ -9,12 +9,14 @@ export const Card = (props) => {
     setProductToShow,
     addProductsToCart,
     removeProductsToCart,
-    cartProducts
+    cartProducts,
+    setIsMenuOpen
   } = useContext(ShoppingCartContext)
 
   const showProduct = () => {
     handleProductDetail()
     setProductToShow(props)
+    setIsMenuOpen(false)
   }
   const checkProductInCart = (id) => {
     const productAdded = cartProducts.some(item => item.id === id)

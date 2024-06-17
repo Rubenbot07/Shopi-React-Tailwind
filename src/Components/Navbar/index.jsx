@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import { FaCartPlus } from 'react-icons/fa'
 import { TiThMenu } from 'react-icons/ti'
@@ -23,12 +23,21 @@ export const Navbar = () => {
     cartProducts,
     handleCartProducts,
     setSearchByCategory,
-    setSearchByTitle
+    setSearchByTitle,
+    isMenuOpen,
+    setIsMenuOpen,
+    setIsCartProductsOpen,
+    setIsProductDatailOpen
   } = useContext(ShoppingCartContext)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const handleCategories = (category) => {
     setSearchByCategory(category)
     setSearchByTitle(null)
+    setIsMenuOpen(false)
+  }
+  const handleSideMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+    setIsCartProductsOpen(false)
+    setIsProductDatailOpen(false)
   }
   return (
     <nav
@@ -36,7 +45,7 @@ export const Navbar = () => {
     >
       <section className='flex items-center w-screen justify-center lg:w-auto lg:justify-start'>
         <div className='lg:hidden absolute left-2 cursor-pointer'>
-          <TiThMenu size='1.5rem' onClick={() => setIsMenuOpen(!isMenuOpen)} />
+          <TiThMenu size='1.5rem' onClick={handleSideMenu} />
         </div>
         <div
           className='font-semibold text-2xl mx-0'
