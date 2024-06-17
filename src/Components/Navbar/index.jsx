@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
-import { FaCartPlus, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaCartPlus } from 'react-icons/fa'
 import { TiThMenu } from 'react-icons/ti'
 
 const categories = [
