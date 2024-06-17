@@ -12,7 +12,7 @@ function MyOrders () {
   return (
     <Layout>
       <div className='flex flex-col items-center gap-5'>
-        <h2 className='font-semibold text-xl'>My Orders</h2>
+        <h1 className='font-semibold text-xl'>My Orders</h1>
         {
             order?.length > 0
               ? (order.map((item, index) => {

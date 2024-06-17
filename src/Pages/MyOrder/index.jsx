@@ -16,16 +16,16 @@ function MyOrder () {
   console.log(index)
   return (
     <Layout>
-      <div className='w-full flex flex-col items-center gap-5 pb-12'>
+      <div className='w-2/3 max-w-[700px] min-w-80 flex flex-col items-center gap-5 pb-12'>
         <div className='flex items-center justify-center relative w-2/3 max-w-[700px] min-w-80'>
           <Link to='/my-orders'>
-            <span className='absolute left-1 top-1'>
+            <span className='absolute left-4 top-1'>
               <FaChevronLeft
                 size='20px'
               />
             </span>
           </Link>
-          <h2 className='font-semibold text-xl'>My Order</h2>
+          <h1 className='font-semibold text-xl'>My Order</h1>
         </div>
         {
           order?.[index]?.products?.map((item) => {
@@ -37,7 +37,7 @@ function MyOrder () {
             )
           })
         }
-        <div className='sticky bottom-2 w-2/3 max-w-[700px] min-w-80'>
+        <div className='sticky bottom-2 pl-4 w-2/3 max-w-[700px] min-w-80'>
           <span className='bg-green-400/80 border text-green-800 rounded-md px-3 font-semibold text-lg'>{`Total: $${totalPrice(order.slice(-1)[0].products)}`}</span>
         </div>
       </div>

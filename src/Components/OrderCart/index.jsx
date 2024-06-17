@@ -1,6 +1,6 @@
 export const OrderCart = (props) => {
   return (
-    <section className='flex flex-col w-2/3 max-w-[700px] min-w-80 h-auto'>
+    <section className='flex flex-col w-2/3 max-w-[700px] min-w-[90%] sm:min-w-80 h-auto'>
       <div className='flex items-center justify-between gap-2 px-6 py-4 border border-black rounded-md'>
         <div className='flex items-center gap-3'>
           <span className='font-semibold'>{`(${props.quantity})`}</span>

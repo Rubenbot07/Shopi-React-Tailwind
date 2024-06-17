@@ -58,9 +58,9 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </section>
-      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md xl:text-lg`}>
+      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md`}>
         <ul
-          className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row lg:px-2'
+          className='flex flex-col gap-1.5 lg:gap-3 lg:flex-row lg:px-2'
         >
           <li className='font-semibold text-lg lg:hidden'>Categories</li>
           {
@@ -85,7 +85,7 @@ export const Navbar = () => {
           className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row lg:px-2'
         >
           <li className='font-semibold text-lg lg:hidden'>Account</li>
-          <li>
+          <li className='text-slate-400'>
             rubenbot77@hotmail.com
           </li>
           {

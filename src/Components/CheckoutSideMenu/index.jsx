@@ -24,7 +24,13 @@ export const CheckoutSideMenu = () => {
   const handleCheckout = () => {
     const date = new Date()
     const orderToAdd = {
-      date: `${date.toLocaleDateString()}  ${date.toLocaleTimeString()}`,
+      date: `
+        ${date.toLocaleDateString()}  
+        ${date.toLocaleTimeString('en-GB', {
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit'
+        })}`,
       products: cartProducts,
       totalProducts: cartProducts.length,
       totalPrice: totalPrice(cartProducts)
@@ -63,7 +69,7 @@ export const CheckoutSideMenu = () => {
                 <>
                   <div className='flex justify-between'>
                     <button
-                      className='font-semibold text-red-500 px-2 rounded-md w-24'
+                      className='font-semibold text-red-500 px-1 rounded-md w-24'
                       onClick={manageCount}
                     >
                       Clean Cart
