@@ -42,11 +42,11 @@ export const Card = (props) => {
 
   return (
     <div
-      className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2 hover:scale-105 '
+      className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2 hover:scale-105 dark:shadow-slate-800'
       onClick={showProduct}
     >
       <figure
-        className='relative mb-2 w-full h-4/5'
+        className='relative mb-2 w-full h-4/5 dark:bg-white'
       >
         <span
           className='absolute bottom-0 left-0 bg-green-400/80 rounded-lg text-black text-xs px-3 py-0.5 m-2'

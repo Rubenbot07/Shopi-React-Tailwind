@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import { FaCartPlus } from 'react-icons/fa'
 import { TiThMenu } from 'react-icons/ti'
@@ -18,7 +18,18 @@ const userMenu = [
 ]
 
 export const Navbar = () => {
-  const textDecoration = 'bg-gray-200 rounded px-1'
+  const textDecoration = 'bg-gray-200 rounded px-1 dark:bg-gray-600'
+  const [darkMode, setDarkMode] = useState(false)
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode])
   const {
     cartProducts,
     handleCartProducts,
@@ -41,14 +52,18 @@ export const Navbar = () => {
   }
   return (
     <nav
-      className='bg-white flex items-center  fixed top-0 z-10 w-full py-3 px-4 lg:px-8 text-sm border-b border-black/20 shadow-sm'
+      className='bg-white flex items-center  fixed top-0 z-10 w-full py-3 px-4 lg:px-8 text-sm border-b border-black/20 shadow-sm dark:bg-slate-800'
     >
       <section className='flex items-center w-screen justify-center lg:w-auto lg:justify-start'>
         <div className='lg:hidden absolute left-2 cursor-pointer'>
-          <TiThMenu size='1.5rem' onClick={handleSideMenu} />
+          <TiThMenu
+            size='1.5rem'
+            onClick={handleSideMenu}
+            className='dark:fill-gray-50'
+          />
         </div>
         <div
-          className='font-semibold text-2xl mx-0'
+          className='font-semibold text-2xl mx-0 dark:text-gray-50'
         >
           <NavLink
             to='/'
@@ -58,9 +73,9 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </section>
-      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md`}>
+      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md dark:bg-slate-800 dark:text-gray-50`}>
         <ul
-          className='flex flex-col gap-1.5 lg:gap-3 lg:flex-row lg:px-2'
+          className='flex flex-col gap-1.5 lg:gap-2 lg:flex-row lg:px-2'
         >
           <li className='font-semibold text-lg lg:hidden'>Categories</li>
           {
@@ -68,7 +83,7 @@ export const Navbar = () => {
                 return (
                   <li
                     key={index}
-                    className='rounded-md hover:bg-gray-100 px-1'
+                    className='rounded-md hover:bg-gray-100 px-1 dark:hover:bg-gray-600'
                   >
                     <NavLink
                       to={link.to}
@@ -109,17 +124,31 @@ export const Navbar = () => {
           }
           <li className='rounded-md hover:bg-gray-100 px-1'>Sign Out</li>
         </ul>
+        <div className='flex gap-4 px-1 pt-5 lg:absolute top-20 right-8'>
+          <span className='font-semibold'>Dark Mode</span>
+          <label htmlFor='darkmode' className='w-12 h-6 rounded-full relative flex items-center px-1'>
+            <input
+              type='checkbox' id='darkmode'
+              className='sr-only peer'
+              onClick={handleDarkMode}
+            />
+            <div className='w-full h-full rounded-full cursor-pointer bg-gray-300 peer-checked:bg-blue-600 transition-all absolute top-0 left-0' />
+            <div className='bg-white w-4 h-4 rounded-full translate-x-0 peer-checked:translate-x-6 transition-all' />
+          </label>
+        </div>
       </section>
       <div
         className='flex items-center cursor-pointer fixed right-2'
         onClick={handleCartProducts}
       >
-        <FaCartPlus size='1.5rem' />
+        <FaCartPlus
+          size='1.5rem'
+          className='dark:fill-gray-50'
+        />
         <sup className={`${cartProducts.length > 0 ? 'bg-green-400/80 text-white rounded-full flex items-center justify-center' : ''} w-5 h-5 p-0.5 text-sm`}>
           {cartProducts ? cartProducts.length : 0}
         </sup>
       </div>
-
     </nav>
   )
 }
