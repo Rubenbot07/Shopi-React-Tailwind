@@ -55,7 +55,7 @@ export const ProductDetail = () => {
             </span>
           </div>
           <p
-            className='text-md font-thin overflow-y-auto h-24 md:h-36'
+            className='text-sm font-thin overflow-y-auto h-24 md:h-36'
           >
             {productToShow.description}
           </p>

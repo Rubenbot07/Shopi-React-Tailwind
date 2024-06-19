@@ -73,7 +73,7 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </section>
-      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-sm dark:bg-slate-900 dark:text-gray-50 dark:border-gray-700`}>
+      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80 text-sm flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent dark:bg-slate-900 dark:text-gray-50 dark:border-gray-700`}>
         <ul
           className='flex flex-col gap-1.5 lg:gap-2 lg:flex-row px-1'
         >
