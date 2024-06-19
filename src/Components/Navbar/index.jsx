@@ -52,7 +52,7 @@ export const Navbar = () => {
   }
   return (
     <nav
-      className='bg-white flex items-center  fixed top-0 z-10 w-full py-3 px-4 lg:px-8 text-sm border-b border-black/20 shadow-sm dark:bg-slate-900'
+      className='bg-white flex items-center  fixed top-0 z-10 w-full py-3 px-4 lg:px-8 text-sm border-b border-black/20 shadow-sm dark:bg-slate-900 dark:border-gray-700'
     >
       <section className='flex items-center w-screen justify-center lg:w-auto lg:justify-start'>
         <div className='lg:hidden absolute left-2 cursor-pointer'>
@@ -73,9 +73,9 @@ export const Navbar = () => {
           </NavLink>
         </div>
       </section>
-      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-md dark:bg-slate-900 dark:text-gray-50`}>
+      <section className={`${isMenuOpen ? 'fixed top-[55px] left-0 w-1/2 border-r border-b border-black/20 rounded-br-md' : 'fixed top-[70px] -left-96'} bg-white transition-all w-2/3 max-w-80  flex flex-col items-start px-5 py-4 gap-4 overflow-y-auto h-[80%] max-h-[400px] lg:flex-row lg:static lg:items-center lg:justify-between lg:w-full lg:max-w-none lg:top-0 lg:border-none lg:bg-transparent lg:text-sm dark:bg-slate-900 dark:text-gray-50 dark:border-gray-700`}>
         <ul
-          className='flex flex-col gap-1.5 lg:gap-2 lg:flex-row lg:px-2'
+          className='flex flex-col gap-1.5 lg:gap-2 lg:flex-row px-1'
         >
           <li className='font-semibold text-lg lg:hidden'>Categories</li>
           {
@@ -98,7 +98,7 @@ export const Navbar = () => {
           }
         </ul>
         <ul
-          className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row lg:px-2'
+          className='flex flex-col gap-1.5 lg:gap-4 lg:flex-row px-1'
         >
           <li className='font-semibold text-lg lg:hidden'>Account</li>
           <li className='text-slate-400 rounded-md'>
@@ -124,7 +124,7 @@ export const Navbar = () => {
           }
           <li className='rounded-md hover:bg-gray-100 px-1 dark:hover:bg-gray-600'>Sign Out</li>
         </ul>
-        <div className='flex gap-4 px-1 pt-5 lg:absolute top-20 right-8'>
+        <div className='flex items-center gap-4 px-1 pt-5 lg:absolute top-20 right-8'>
           <span className='font-semibold'>Dark Mode</span>
           <label htmlFor='darkmode' className='w-12 h-6 rounded-full relative flex items-center px-1'>
             <input

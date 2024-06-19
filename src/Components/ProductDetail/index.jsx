@@ -12,12 +12,12 @@ export const ProductDetail = () => {
   } = useContext(ShoppingCartContext)
   return (
     <section
-      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-20 h-auto max-h-[85%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto dark:bg-slate-900 dark:border-gray-700`}
+      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-20 h-auto max-h-[90%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 md:w-[320px] md:right-1  md:left-auto dark:bg-slate-900 dark:border-gray-700`}
     >
       <div className='pt-4 px-2 flex flex-col gap-3'>
         <h3 className='text-center text-lg font-semibold'>Product Detail</h3>
         <figure
-          className='relative p-4 h-60 min-h-60 bg-white rounded-md'
+          className='relative p-4 h-52 min-h-52 bg-white rounded-md'
         >
           <img
             className='w-full h-full object-contain'
@@ -41,21 +41,21 @@ export const ProductDetail = () => {
             />
           </div>
           <div
-            className='flex justify-between'
+            className='flex justify-between gap-2'
           >
             <span
-              className='text-lg font-semibold w-2/3'
+              className='text-md font-semibold w-2/3'
             >
               {productToShow.title}
             </span>
             <span
-              className='text-2xl font-semibold'
+              className='text-xl font-semibold'
             >
               {`$${productToShow.price}`}
             </span>
           </div>
           <p
-            className='text-md font-thin overflow-y-auto h-20 md:h-36'
+            className='text-md font-thin overflow-y-auto h-24 md:h-36'
           >
             {productToShow.description}
           </p>
