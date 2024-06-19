@@ -12,31 +12,31 @@ export const ProductDetail = () => {
   } = useContext(ShoppingCartContext)
   return (
     <section
-      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[85%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-16 md:top-24 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto`}
+      className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-20 h-auto max-h-[85%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto dark:bg-slate-900 dark:border-gray-700`}
     >
-      <div className='pt-4'>
+      <div className='pt-4 px-2 flex flex-col gap-3'>
         <h3 className='text-center text-lg font-semibold'>Product Detail</h3>
         <figure
-          className='relative p-4 h-60 min-h-60 bg-white'
+          className='relative p-4 h-60 min-h-60 bg-white rounded-md'
         >
           <img
             className='w-full h-full object-contain'
             src={productToShow.image} alt={productToShow.title}
           />
           <span
-            className='bg-green-400/80 px-4 py-0.5 rounded-md absolute bottom-2 left-3'
+            className='bg-green-400/80 px-4 py-0.5 rounded-md absolute bottom-2 left-3 dark:text-slate-900'
           >
             {productToShow.category}
           </span>
         </figure>
         <div
-          className='flex flex-col gap-4 bg-gray-400/5 w-[95%] mx-auto px-5 pt-4 pb-8 rounded-lg'
+          className='description flex flex-col gap-4 bg-gray-400/5 w-full mx-auto px-5 pt-4 pb-8 rounded-lg dark:bg-gray-800'
         >
           <div
             className='absolute top-2 right-2 bg-gray-400/30 rounded-full p-1 cursor-pointer hover:bg-gray-400/50'
           >
             <IoClose
-              size='1.5rem'
+              size='1.3rem'
               onClick={handleProductDetail}
             />
           </div>
@@ -60,7 +60,7 @@ export const ProductDetail = () => {
             {productToShow.description}
           </p>
           <button
-            className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1 hover:scale-105 active:scale-95'
+            className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1 hover:scale-105 active:scale-95 dark:text-slate-900'
             onClick={() => addProductsToCart(productToShow)}
           >
             <FaCartPlus />

@@ -15,7 +15,7 @@ export const Account = () => {
           <li>Password: <span className='font-semibold'>*********</span></li>
         </ul>
       </div>
-      <button className='border border-black w-full rounded-md font-semibold py-2'>Edit</button>
+      <button className='border border-black w-full rounded-md font-semibold py-2 dark:border-gray-400'>Edit</button>
     </section>
   )
 }

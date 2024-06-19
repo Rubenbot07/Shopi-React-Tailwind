@@ -37,7 +37,7 @@ function MyOrder () {
           })
         }
         <div className='sticky bottom-2 pl-4 w-2/3 max-w-[700px] min-w-80'>
-          <span className='bg-green-400/80 border text-green-800 rounded-md px-3 font-semibold text-lg'>{`Total: $${totalPrice(order.slice(-1)[0].products)}`}</span>
+          <span className='bg-green-400/80  text-green-800 rounded-md px-3 font-semibold text-lg dark:text-slate-900'>{`Total: $${totalPrice(order.slice(-1)[0].products)}`}</span>
         </div>
       </div>
 

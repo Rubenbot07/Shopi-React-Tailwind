@@ -40,7 +40,7 @@ export const CheckoutSideMenu = () => {
     handleCartProducts(false)
   }
   return (
-    <section className={`${isCartProductsOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[80%] overflow-y-auto min-h-48 shadow-lg top-20 md:top-24 px-4 pt-6 pb-3 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto`}>
+    <section className={`${isCartProductsOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[80%] overflow-y-auto min-h-48 shadow-lg top-20 md:top-24 px-4 pt-6 pb-3 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto dark:bg-slate-900 dark:text-gray-50 dark:border-gray-700`}>
       <span
         className='absolute right-4 cursor-pointer'
         onClick={handleCartProducts}
@@ -84,7 +84,7 @@ export const CheckoutSideMenu = () => {
                     to='my-orders/last'
                   >
                     <button
-                      className='self-center font-semibold bg-black/80 text-white h-8 rounded-md w-full'
+                      className='self-center font-semibold bg-black/80 text-white h-8 rounded-md w-full dark:bg-slate-50 dark:text-slate-900'
                       onClick={handleCheckout}
                     >
                       Checkout
