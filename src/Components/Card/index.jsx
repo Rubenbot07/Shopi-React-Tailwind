@@ -44,6 +44,8 @@ export const Card = (props) => {
     <div
       className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2 hover:scale-105 dark:shadow-gray-900'
       onClick={showProduct}
+      tabIndex='2'
+      onKeyDown={(e) => { if (e.key === 'Enter') showProduct() }}
     >
       <figure
         className='relative mb-2 w-full h-4/5 dark:bg-white'

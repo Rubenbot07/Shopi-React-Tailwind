@@ -59,6 +59,7 @@ function Home () {
         placeholder='Search Product'
         className='border border-black sm:w-80 rounded-md p-2 text-center focus:outline-none dark:bg-slate-900 dark:border-gray-500'
         onChange={(event) => setSearchByTitle(event.target.value.toLocaleLowerCase())}
+        tabIndex='2'
       />
       <section
         className='grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-screen max-w-screen-xl px-5 pb-12 pt-5'

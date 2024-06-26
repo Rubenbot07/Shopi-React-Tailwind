@@ -30,10 +30,11 @@ export const ShoppingCartProvider = ({ children }) => {
   // Handle Shopping cart
   const [productQuantity, setProductQuantity] = useState(0)
   const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
-  const handleCartProducts = () => {
+  const handleCartProducts = (e) => {
     setIsCartProductsOpen(!isCartProductsOpen)
     setIsProductDatailOpen(false)
     setIsMenuOpen(false)
+    if (e.key === 'Enter') setIsCartProductsOpen(!isCartProductsOpen)
   }
   // Adding products to Shopping cart
   const addProductsToCart = (productData, e) => {

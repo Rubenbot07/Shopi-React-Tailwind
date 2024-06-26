@@ -55,7 +55,7 @@ export const Navbar = () => {
       className='bg-white flex items-center  fixed top-0 z-10 w-full py-3 px-4 lg:px-8 text-sm border-b border-black/20 shadow-sm dark:bg-slate-900 dark:border-gray-700'
     >
       <section className='flex items-center w-screen justify-center lg:w-auto lg:justify-start'>
-        <div className='lg:hidden absolute left-2 cursor-pointer'>
+        <div role='button' className='lg:hidden absolute left-2 cursor-pointer'>
           <TiThMenu
             size='1.5rem'
             onClick={handleSideMenu}
@@ -86,6 +86,7 @@ export const Navbar = () => {
                     className='rounded-md hover:bg-gray-100 px-1 dark:hover:bg-gray-600'
                   >
                     <NavLink
+                      tabIndex='1'
                       to={link.to}
                       onClick={() => handleCategories(link.categoryName)}
                       className={({ isActive }) => isActive ? textDecoration : undefined}
@@ -115,6 +116,7 @@ export const Navbar = () => {
                     <NavLink
                       to={link.to}
                       className={({ isActive }) => isActive ? textDecoration : undefined}
+                      tabIndex='1'
                     >
                       {link.text}
                     </NavLink>
@@ -140,6 +142,8 @@ export const Navbar = () => {
       <div
         className='flex items-center cursor-pointer fixed right-2 dark:text-gray-50'
         onClick={handleCartProducts}
+        tabIndex='1'
+        onKeyDown={(e) => { if (e.key === 'Enter') handleCartProducts() }}
       >
         <FaCartPlus
           size='1.5rem'
