@@ -13,6 +13,11 @@ export const Card = (props) => {
     setIsMenuOpen
   } = useContext(ShoppingCartContext)
 
+  const manageFocus = () => {
+    const modal = document.querySelector('#product')
+    modal.focus()
+    showProduct()
+  }
   const showProduct = () => {
     handleProductDetail()
     setProductToShow(props)
@@ -45,7 +50,7 @@ export const Card = (props) => {
       className='shadow-md cursor-pointer w-56 h-60 rounded-lg p-2 hover:scale-105 dark:shadow-gray-900'
       onClick={showProduct}
       tabIndex='2'
-      onKeyDown={(e) => { if (e.key === 'Enter') showProduct() }}
+      onKeyDown={(e) => { if (e.key === 'Enter') manageFocus() }}
     >
       <figure
         className='relative mb-2 w-full h-4/5 dark:bg-white'

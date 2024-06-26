@@ -56,6 +56,7 @@ function Home () {
       <h1 className='font-semibold text-xl'>Home</h1>
       <input
         type='search'
+        id='search'
         placeholder='Search Product'
         className='border border-black sm:w-80 rounded-md p-2 text-center focus:outline-none dark:bg-slate-900 dark:border-gray-500'
         onChange={(event) => setSearchByTitle(event.target.value.toLocaleLowerCase())}

@@ -12,7 +12,9 @@ export const ProductDetail = () => {
   } = useContext(ShoppingCartContext)
   return (
     <section
+      id='product'
       className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-20 h-auto max-h-[90%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 md:w-[320px] md:right-1  md:left-auto dark:bg-slate-900 dark:border-gray-700`}
+      tabIndex='2'
     >
       <div className='pt-4 px-2 flex flex-col gap-3'>
         <h3 className='text-center text-lg font-semibold'>Product Detail</h3>
@@ -62,6 +64,7 @@ export const ProductDetail = () => {
           <button
             className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1 hover:scale-105 active:scale-95 dark:text-slate-900'
             onClick={() => addProductsToCart(productToShow)}
+            tabIndex='2'
           >
             <FaCartPlus />
             Add to cart
