@@ -26,6 +26,7 @@ export const CartMenu = (props) => {
             <button
               className='flex items-center justify-center h-6 w-6'
               onClick={() => props.removeToCart(props)}
+              tabIndex='2'
             >
               -
             </button>
@@ -33,6 +34,7 @@ export const CartMenu = (props) => {
             <button
               className='flex items-center justify-center h-6 w-6'
               onClick={() => props.addToCart(props)}
+              tabIndex='2'
             >
               +
             </button>

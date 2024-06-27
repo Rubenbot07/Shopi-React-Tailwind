@@ -73,6 +73,8 @@ export const CheckoutSideMenu = () => {
                     <button
                       className='font-semibold text-red-500 px-1 rounded-md w-24'
                       onClick={manageCount}
+                      onKeyDown={(e) => { if (e.key === 'Enter') manageCount() }}
+                      tabIndex='2'
                     >
                       Clean Cart
                     </button>
@@ -88,6 +90,8 @@ export const CheckoutSideMenu = () => {
                     <button
                       className='self-center font-semibold bg-black/80 text-white h-8 rounded-md w-full dark:bg-slate-50 dark:text-slate-900'
                       onClick={handleCheckout}
+                      onKeyDown={(e) => { if (e.key === 'Enter') handleCheckout() }}
+                      tabIndex='2'
                     >
                       Checkout
                     </button>

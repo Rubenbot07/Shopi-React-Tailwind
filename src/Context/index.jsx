@@ -58,6 +58,10 @@ export const ShoppingCartProvider = ({ children }) => {
         const modal = document.querySelector('#product-detail')
         modal.focus()
       }
+      if (!isCartProductsOpen && !isProductDetailOpen) {
+        const modal = document.querySelector('#nav')
+        modal.focus()
+      }
       if (isCartProductsOpen) {
         const modal = document.querySelector('#cart')
         modal.focus()

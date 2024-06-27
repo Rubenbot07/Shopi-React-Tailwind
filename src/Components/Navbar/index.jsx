@@ -67,7 +67,9 @@ export const Navbar = () => {
         >
           <NavLink
             to='/'
+            id='nav'
             onClick={() => handleCategories(null)}
+            tabIndex='1'
           >
             Shopi
           </NavLink>
@@ -128,11 +130,17 @@ export const Navbar = () => {
         </ul>
         <div className='flex items-center gap-4 px-1 pt-5 lg:absolute top-20 right-8'>
           <span className='font-semibold'>Dark Mode</span>
-          <label htmlFor='darkmode' className='w-12 h-6 rounded-full relative flex items-center px-1'>
+          <label
+            htmlFor='darkmode'
+            className='w-12 h-6 rounded-full relative flex items-center px-1'
+            tabIndex='1'
+            onKeyDown={(e) => { if (e.key === 'Enter') handleDarkMode() }}
+          >
             <input
+              onClick={handleDarkMode}
+              tabIndex='1'
               type='checkbox' id='darkmode'
               className='sr-only peer'
-              onClick={handleDarkMode}
             />
             <div className='w-full h-full rounded-full cursor-pointer bg-gray-300 peer-checked:bg-blue-800 transition-all absolute top-0 left-0' />
             <div className='bg-white w-4 h-4 rounded-full translate-x-0 peer-checked:translate-x-6 transition-all' />
