@@ -40,10 +40,12 @@ export const CheckoutSideMenu = () => {
     handleCartProducts(false)
   }
   return (
-    <section className={`${isCartProductsOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[80%] overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 px-4 pt-6 pb-3 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto dark:bg-slate-900 dark:text-gray-50 dark:border-gray-700`}>
+    <section id='cart' tabIndex='2' className={`${isCartProductsOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-10 h-auto max-h-[80%] overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 px-4 pt-6 pb-3 md:w-[320px] md:right-1 md:max-h-[cal(100vh - 68px)] md:left-auto dark:bg-slate-900 dark:text-gray-50 dark:border-gray-700`}>
       <span
         className='absolute right-4 cursor-pointer'
         onClick={handleCartProducts}
+        tabIndex='2'
+        onKeyDown={(e) => { if (e.key === 'Enter') handleCartProducts() }}
       >
         <IoClose size='30px' />
       </span>

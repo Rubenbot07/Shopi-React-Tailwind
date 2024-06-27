@@ -52,9 +52,23 @@ export const ShoppingCartProvider = ({ children }) => {
       }
     ]))
   }
+  useEffect(() => {
+    const handleFocus = () => {
+      if (isProductDetailOpen) {
+        const modal = document.querySelector('#product-detail')
+        modal.focus()
+      }
+      if (isCartProductsOpen) {
+        const modal = document.querySelector('#cart')
+        modal.focus()
+      }
+    }
+    handleFocus()
+  }, [isProductDetailOpen, isCartProductsOpen])
   // Removing Products from Shopping cart
   const removeProductsToCart = (productData, e) => {
     if (e) e.stopPropagation()
+    if (cartProducts.length < 1) handleCartProducts()
     if (productData.quantity > 1) {
       const productInCartIndex = cartProducts.findIndex(item => item.id === productData.id)
       const newCart = structuredClone(cartProducts)

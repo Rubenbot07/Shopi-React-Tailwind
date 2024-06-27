@@ -12,7 +12,7 @@ export const ProductDetail = () => {
   } = useContext(ShoppingCartContext)
   return (
     <section
-      id='product'
+      id='product-detail'
       className={`${isProductDetailOpen ? 'flex fixed' : 'hidden'} cart flex-col gap-3 bg-white rounded-md w-[95%] max-w-96 right-0 left-0 mx-auto border border-black/40 z-20 h-auto max-h-[90%]  pb-4 overflow-y-auto min-h-48 shadow-lg top-[4.5rem] md:top-20 md:w-[320px] md:right-1  md:left-auto dark:bg-slate-900 dark:border-gray-700`}
       tabIndex='2'
     >
@@ -40,6 +40,8 @@ export const ProductDetail = () => {
             <IoClose
               size='1.3rem'
               onClick={handleProductDetail}
+              tabIndex='2'
+              onKeyDown={(e) => { if (e.key === 'Enter') handleProductDetail() }}
             />
           </div>
           <div

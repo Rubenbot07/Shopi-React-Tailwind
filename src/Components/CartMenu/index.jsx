@@ -44,6 +44,8 @@ export const CartMenu = (props) => {
         <span
           className='cursor-pointer p-1 absolute top-7 -right-8 bg-gray-400/30 rounded-full'
           onClick={deleteFromCart}
+          tabIndex='2'
+          onKeyDown={(e) => { if (e.key === 'Enter') deleteFromCart() }}
         >
           <IoClose size='15px' />
         </span>

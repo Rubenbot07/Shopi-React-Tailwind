@@ -14,8 +14,6 @@ export const Card = (props) => {
   } = useContext(ShoppingCartContext)
 
   const manageFocus = () => {
-    const modal = document.querySelector('#product')
-    modal.focus()
     showProduct()
   }
   const showProduct = () => {
