@@ -6,6 +6,7 @@ export const SignInForm = () => {
     >
       <label htmlFor='email' className='text-sm'>Email</label>
       <input
+        required
         id='email'
         type='email'
         placeholder='Enter your email address'
@@ -13,12 +14,13 @@ export const SignInForm = () => {
       />
       <label htmlFor='password' className='text-sm'>Password</label>
       <input
+        required
         type='password'
         placeholder='Your password'
         className='border border-gray-400 py-2 px-3 rounded-md text-sm'
       />
       <button
-        type='button'
+        type='submit'
         className='bg-black text-white py-2 px-3 rounded-md mt-5 dark:bg-gray-300 dark:text-black'
       >
         Sign in
