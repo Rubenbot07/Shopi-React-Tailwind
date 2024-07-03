@@ -21,6 +21,8 @@ export const ShoppingCartProvider = ({ children }) => {
     }
     fetchData()
   }, [])
+  // User log in state
+  const [isLogIn, setIsLogIn] = useState(false)
   // Handle Product Detail
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
   const handleProductDetail = () => {
@@ -103,6 +105,8 @@ export const ShoppingCartProvider = ({ children }) => {
 
   return (
     <ShoppingCartContext.Provider value={{
+      isLogIn,
+      setIsLogIn,
       isProductDetailOpen,
       handleProductDetail,
       setIsProductDatailOpen,
