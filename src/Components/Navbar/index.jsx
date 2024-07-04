@@ -39,7 +39,7 @@ export const Navbar = () => {
     setIsMenuOpen,
     setIsCartProductsOpen,
     setIsProductDatailOpen,
-    isLogIn
+    isSignIn
   } = useContext(ShoppingCartContext)
   const handleCategories = (category) => {
     setSearchByCategory(category)
@@ -127,7 +127,7 @@ export const Navbar = () => {
                 )
               })
           }
-          <li className='rounded-md hover:bg-gray-100 px-1 dark:hover:bg-gray-600'>{(isLogIn)
+          <li onClick={() => handleCategories()} className='rounded-md hover:bg-gray-100 px-1 dark:hover:bg-gray-600'>{(isSignIn)
             ? <NavLink to='/sign-out'>Sign Out</NavLink>
             : <NavLink to='/sign-in'>Sign In</NavLink>}
           </li>

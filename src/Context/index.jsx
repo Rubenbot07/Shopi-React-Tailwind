@@ -22,7 +22,24 @@ export const ShoppingCartProvider = ({ children }) => {
     fetchData()
   }, [])
   // User log in state
-  const [isLogIn, setIsLogIn] = useState(false)
+  const [isSignIn, setIsSignIn] = useState(false)
+  const [user, setUser] = useState({})
+  const testUser = {
+    name: 'John Doe',
+    email: 'Johndoe77@gmail.com',
+    password: '123456'
+  }
+  localStorage.setItem('Johndoe77@hotmail.com', JSON.stringify(testUser))
+  const signIn = (userEmail, userPassword) => {
+    const userParse = JSON.parse(localStorage.getItem(userEmail))
+    if (localStorage.getItem(userEmail) && userParse.password === userPassword) {
+      console.log('great')
+      setUser(userParse)
+      setIsSignIn(true)
+    } else {
+      console.log('Email or password incorrect', userParse)
+    }
+  }
   // Handle Product Detail
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
   const handleProductDetail = () => {
@@ -105,8 +122,8 @@ export const ShoppingCartProvider = ({ children }) => {
 
   return (
     <ShoppingCartContext.Provider value={{
-      isLogIn,
-      setIsLogIn,
+      isSignIn,
+      setIsSignIn,
       isProductDetailOpen,
       handleProductDetail,
       setIsProductDatailOpen,
@@ -131,7 +148,9 @@ export const ShoppingCartProvider = ({ children }) => {
       searchByCategory,
       setSearchByCategory,
       isMenuOpen,
-      setIsMenuOpen
+      setIsMenuOpen,
+      signIn,
+      user
     }}
     >
       {children}
