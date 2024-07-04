@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
 import { ShoppingCartContext } from '../../Context'
 export const SignInForm = () => {
   const {
     signIn
   } = useContext(ShoppingCartContext)
 
+  const emailRef = useRef(null)
+  const passwordRef = useRef(null)
   const manageSignIn = () => {
-    const email = document.getElementById('email').value
-    const password = document.getElementById('password').value
-
-    signIn(email, password)
+    signIn(emailRef.current.value, passwordRef.current.value)
+    console.log(emailRef.current.value, passwordRef.current.value)
   }
   return (
     <form
@@ -18,6 +18,7 @@ export const SignInForm = () => {
     >
       <label htmlFor='email' className='text-sm'>Email</label>
       <input
+        ref={emailRef}
         required
         id='email'
         type='email'
@@ -26,6 +27,7 @@ export const SignInForm = () => {
       />
       <label htmlFor='password' className='text-sm'>Password</label>
       <input
+        ref={passwordRef}
         required
         id='password'
         type='password'
