@@ -32,12 +32,14 @@ export const ShoppingCartProvider = ({ children }) => {
   }
   localStorage.setItem('Johndoe77@hotmail.com', JSON.stringify(testUser))
   const signIn = (userEmail, userPassword) => {
-    const userParse = JSON.parse(localStorage.getItem(userEmail))
-    if (localStorage.getItem(userEmail) && userParse.password === userPassword) {
-      console.log('great')
-      setUser(userParse)
-      setIsSignIn(true)
-    }
+    setTimeout(() => {
+      const userParse = JSON.parse(localStorage.getItem(userEmail))
+      if (localStorage.getItem(userEmail) && userParse.password === userPassword) {
+        console.log('great')
+        setUser(userParse)
+        setIsSignIn(true)
+      }
+    }, '4000')
   }
   // Handle Product Detail
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
