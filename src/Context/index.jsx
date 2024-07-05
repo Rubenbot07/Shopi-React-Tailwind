@@ -27,7 +27,8 @@ export const ShoppingCartProvider = ({ children }) => {
   const testUser = {
     name: 'John Doe',
     email: 'Johndoe77@gmail.com',
-    password: '123456'
+    password: '123456',
+    address: 'Saturno 3-14, Dosquebradas'
   }
   localStorage.setItem('Johndoe77@hotmail.com', JSON.stringify(testUser))
   const signIn = (userEmail, userPassword) => {

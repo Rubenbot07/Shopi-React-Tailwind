@@ -117,7 +117,7 @@ export const Navbar = () => {
                     className='rounded-md hover:bg-gray-100 px-1 dark:hover:bg-gray-600'
                   >
                     <NavLink
-                      to={link.to}
+                      to={(isSignIn) ? link.to : '/sign-in'}
                       className={({ isActive }) => isActive ? textDecoration : undefined}
                       tabIndex='1'
                     >
