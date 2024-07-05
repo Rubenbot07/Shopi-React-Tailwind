@@ -26,7 +26,7 @@ export const ShoppingCartProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const testUser = {
     name: 'John Doe',
-    email: 'Johndoe77@gmail.com',
+    email: 'Johndoe77@hotmail.com',
     password: '123456',
     address: 'Saturno 3-14, Dosquebradas'
   }
@@ -37,8 +37,6 @@ export const ShoppingCartProvider = ({ children }) => {
       console.log('great')
       setUser(userParse)
       setIsSignIn(true)
-    } else {
-      console.log('Email or password incorrect', userParse)
     }
   }
   // Handle Product Detail

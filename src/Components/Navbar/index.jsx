@@ -39,7 +39,8 @@ export const Navbar = () => {
     setIsMenuOpen,
     setIsCartProductsOpen,
     setIsProductDatailOpen,
-    isSignIn
+    isSignIn,
+    user
   } = useContext(ShoppingCartContext)
   const handleCategories = (category) => {
     setSearchByCategory(category)
@@ -106,7 +107,7 @@ export const Navbar = () => {
         >
           <li className='font-semibold text-lg lg:hidden'>Account</li>
           <li className='text-slate-400 rounded-md'>
-            rubenbot77@hotmail.com
+            {isSignIn ? user.email : ''}
           </li>
           {
               userMenu.map((link, index) => {
