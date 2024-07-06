@@ -1,15 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useContext, useRef, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
-import { IoMdArrowForward } from 'react-icons/io'
 import ReactLoading from 'react-loading'
 export const SignInForm = () => {
   const {
     signIn,
-    isSignIn,
-    user
+    isSignIn
   } = useContext(ShoppingCartContext)
 
+  const navigate = useNavigate()
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
   const [invalidUser, setInvalidUser] = useState(false)
@@ -28,6 +27,7 @@ export const SignInForm = () => {
       } else {
         setIsLoading(false)
         setInvalidUser(false)
+        navigate('/')
       }
     }, '4000')
   }
@@ -35,7 +35,7 @@ export const SignInForm = () => {
     <section className='flex flex-col justify-center w-[90%] max-w-96 py-4 min-h-80'>
       <form
         onSubmit={(e) => manageSubmit(e)}
-        className={`${!isSignIn ? 'flex' : 'hidden'} flex-col gap-2 w-full max-w-96`}
+        className='flex flex-col gap-2 w-full max-w-96'
       >
         <label htmlFor='email' className='text-sm'>Email</label>
         <input
@@ -82,19 +82,6 @@ export const SignInForm = () => {
           </button>
         </Link>
       </form>
-      <section>
-        <div className={`${isSignIn ? 'flex' : 'hidden'} flex-col gap-4 items-center p-4 rounded-md bg-green-400/10 border border-green-400 dark:bg-green-400/40`}>
-          <p className='text-green-900 text-xl dark:text-white'>
-            Welcome to Shopi {user.name}
-          </p>
-          <Link to='/'>
-            <button className='flex items-center gap-2 bg-green-400 p-2 rounded-md text-green-900 text-lg'>
-              Go home
-              <IoMdArrowForward size='1.5rem' />
-            </button>
-          </Link>
-        </div>
-      </section>
     </section>
   )
 }
