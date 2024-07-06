@@ -32,7 +32,7 @@ export const SignInForm = () => {
     }, '4000')
   }
   return (
-    <section className='w-[90%] max-w-96 '>
+    <section className='flex flex-col justify-center w-[90%] max-w-96 py-4 min-h-80'>
       <form
         onSubmit={(e) => manageSubmit(e)}
         className={`${!isSignIn ? 'flex' : 'hidden'} flex-col gap-2 w-full max-w-96`}
@@ -44,7 +44,7 @@ export const SignInForm = () => {
           id='email'
           type='email'
           placeholder='Enter your email address'
-          className='border border-gray-400 py-2 px-3 rounded-md text-sm invalid:outline-red-300'
+          className='border border-gray-400 py-2 px-3 rounded-md text-sm invalid:outline-red-300 dark:text-black'
         />
         <label htmlFor='password' className='text-sm'>Password</label>
         <input
@@ -53,7 +53,7 @@ export const SignInForm = () => {
           id='password'
           type='password'
           placeholder='Your password'
-          className='border border-gray-400 py-2 px-3 rounded-md text-sm '
+          className='border border-gray-400 py-2 px-3 rounded-md text-sm dark:text-black'
         />
         <div className={`${invalidUser ? 'flex' : 'hidden'} flex-col items-center text-red-700 bg-red-100 border border-red-500 rounded-md`}>
           <p className='text-lg font-semibold'>Login Failed</p>
@@ -83,8 +83,8 @@ export const SignInForm = () => {
         </Link>
       </form>
       <section>
-        <div className={`${isSignIn ? 'flex' : 'hidden'} flex-col gap-4 items-center p-4 rounded-md bg-green-400/30 border border-green-400`}>
-          <p className='text-green-900 text-xl'>
+        <div className={`${isSignIn ? 'flex' : 'hidden'} flex-col gap-4 items-center p-4 rounded-md bg-green-400/10 border border-green-400 dark:bg-green-400/40`}>
+          <p className='text-green-900 text-xl dark:text-white'>
             Welcome to Shopi {user.name}
           </p>
           <Link to='/'>

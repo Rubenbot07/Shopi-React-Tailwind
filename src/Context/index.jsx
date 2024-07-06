@@ -57,6 +57,9 @@ export const ShoppingCartProvider = ({ children }) => {
   }
   // Adding products to Shopping cart
   const addProductsToCart = (productData, e) => {
+    if (!isSignIn) {
+      location.assign(location + 'sign-in')
+    }
     if (e) e.stopPropagation()
     const productInCartIndex = cartProducts.findIndex(item => item.id === productData.id)
     if (productInCartIndex >= 0) {
