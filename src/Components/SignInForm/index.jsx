@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useContext, useRef, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import ReactLoading from 'react-loading'
-import { IoEye, IoEyeOffSharp, IoEyeSharp } from 'react-icons/io5'
+import { IoEye, IoEyeOffSharp } from 'react-icons/io5'
 export const SignInForm = () => {
   const {
     signIn,
