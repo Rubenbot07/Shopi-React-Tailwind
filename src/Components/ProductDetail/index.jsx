@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
 import { ShoppingCartContext } from '../../Context'
@@ -8,8 +9,17 @@ export const ProductDetail = () => {
     isProductDetailOpen,
     handleProductDetail,
     productToShow,
-    addProductsToCart
+    addProductsToCart,
+    isSignIn
   } = useContext(ShoppingCartContext)
+  const navigate = useNavigate()
+  const manageAddToCartPermission = (productToShow) => {
+    if (isSignIn) {
+      addProductsToCart(productToShow)
+    } else {
+      navigate('/sign-in')
+    }
+  }
   return (
     <section
       id='product-detail'
@@ -65,7 +75,7 @@ export const ProductDetail = () => {
           </p>
           <button
             className='w-2/3 mx-auto bg-green-400 rounded-md flex items-center justify-center gap-4 py-1 hover:scale-105 active:scale-95 dark:text-slate-900'
-            onClick={() => addProductsToCart(productToShow)}
+            onClick={() => manageAddToCartPermission(productToShow)}
             tabIndex='2'
           >
             <FaCartPlus />
