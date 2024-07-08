@@ -39,12 +39,15 @@ export const ShoppingCartProvider = ({ children }) => {
       setIsSignIn(true)
     }
   }
+  const [isLoading, setIsLoading] = useState(false)
+  const [userExist, setUserExist] = useState(false)
   const signOut = () => {
     location.reload()
   }
   const signUp = (userName, userAddress, userEmail, userPassword) => {
     if (localStorage.getItem(userEmail)) {
       console.log('error')
+      setUserExist(true)
     } else {
       setUser(
         {
@@ -54,8 +57,6 @@ export const ShoppingCartProvider = ({ children }) => {
           password: userPassword
         }
       )
-      console.log(user)
-      localStorage.setItem(userEmail, JSON.stringify(user))
     }
   }
   // Handle Product Detail
@@ -64,6 +65,7 @@ export const ShoppingCartProvider = ({ children }) => {
     setIsProductDatailOpen(!isProductDetailOpen)
     setIsCartProductsOpen(false)
   }
+
   // Handle Shopping cart
   const [productQuantity, setProductQuantity] = useState(0)
   const [isCartProductsOpen, setIsCartProductsOpen] = useState(false)
@@ -170,7 +172,11 @@ export const ShoppingCartProvider = ({ children }) => {
       signIn,
       user,
       signOut,
-      signUp
+      signUp,
+      isLoading,
+      setIsLoading,
+      userExist,
+      setUserExist
     }}
     >
       {children}

@@ -5,18 +5,21 @@ import ReactLoading from 'react-loading'
 export const SignInForm = () => {
   const {
     signIn,
-    isSignIn
+    isSignIn,
+    isLoading,
+    setIsLoading
   } = useContext(ShoppingCartContext)
 
   const navigate = useNavigate()
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
   const [invalidUser, setInvalidUser] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
   const manageSignIn = () => {
     signIn(emailRef.current.value, passwordRef.current.value)
     console.log(emailRef.current.value, passwordRef.current.value)
-    setIsLoading(true)
+    if (emailRef.current.value.length && passwordRef.current.value > 0) {
+      setIsLoading(true)
+    }
   }
   const manageSubmit = (e) => {
     e.preventDefault('submit')
