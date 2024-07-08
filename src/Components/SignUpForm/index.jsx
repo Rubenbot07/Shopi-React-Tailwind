@@ -12,6 +12,14 @@ export const SignUpForm = () => {
         placeholder='Full name'
         className='border border-gray-400 py-2 px-3 rounded-md text-sm'
       />
+      <label htmlFor='name' className='text-sm'>Address</label>
+      <input
+        required
+        id='name'
+        type='text'
+        placeholder='Your address'
+        className='border border-gray-400 py-2 px-3 rounded-md text-sm'
+      />
       <label htmlFor='email' className='text-sm'>Email</label>
       <input
         required

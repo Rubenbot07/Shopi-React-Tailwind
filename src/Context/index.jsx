@@ -39,6 +39,9 @@ export const ShoppingCartProvider = ({ children }) => {
       setIsSignIn(true)
     }
   }
+  const signOut = () => {
+    location.reload()
+  }
   // Handle Product Detail
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
   const handleProductDetail = () => {
@@ -149,7 +152,8 @@ export const ShoppingCartProvider = ({ children }) => {
       isMenuOpen,
       setIsMenuOpen,
       signIn,
-      user
+      user,
+      signOut
     }}
     >
       {children}
