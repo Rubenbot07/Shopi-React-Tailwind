@@ -1,7 +1,8 @@
 import { useContext } from 'react'
+import { ShoppingCartContext } from '../../Context'
+import { useNavigate } from 'react-router-dom'
 import { IoMdAdd } from 'react-icons/io'
 import { FaCheck } from 'react-icons/fa'
-import { ShoppingCartContext } from '../../Context'
 
 export const Card = (props) => {
   const {
@@ -10,11 +11,21 @@ export const Card = (props) => {
     addProductsToCart,
     removeProductsToCart,
     cartProducts,
-    setIsMenuOpen
+    setIsMenuOpen,
+    isSignIn
   } = useContext(ShoppingCartContext)
 
   const manageFocus = () => {
     showProduct()
+  }
+  const navigate = useNavigate()
+  const manageAddToCartPermission = (props, e) => {
+    if (isSignIn) {
+      addProductsToCart(props, e)
+    } else {
+      e.stopPropagation()
+      navigate('/sign-in')
+    }
   }
   const showProduct = () => {
     handleProductDetail()
@@ -35,7 +46,7 @@ export const Card = (props) => {
       : (
         <div
           className='absolute top-0 right-0 flex justify-center items-center bg-gray-200 w-6 h-6 rounded-full m-2 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-500'
-          onClick={(e) => addProductsToCart(props, e)}
+          onClick={(e) => manageAddToCartPermission(props, e)}
         >
           <IoMdAdd />
         </div>

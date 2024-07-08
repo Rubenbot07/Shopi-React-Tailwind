@@ -32,14 +32,12 @@ export const ShoppingCartProvider = ({ children }) => {
   }
   localStorage.setItem('Johndoe77@hotmail.com', JSON.stringify(testUser))
   const signIn = (userEmail, userPassword) => {
-    setTimeout(() => {
-      const userParse = JSON.parse(localStorage.getItem(userEmail))
-      if (localStorage.getItem(userEmail) && userParse.password === userPassword) {
-        console.log('great')
-        setUser(userParse)
-        setIsSignIn(true)
-      }
-    }, '4000')
+    const userParse = JSON.parse(localStorage.getItem(userEmail))
+    if (localStorage.getItem(userEmail) && userParse.password === userPassword) {
+      console.log('great')
+      setUser(userParse)
+      setIsSignIn(true)
+    }
   }
   // Handle Product Detail
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
@@ -76,15 +74,15 @@ export const ShoppingCartProvider = ({ children }) => {
     const handleFocus = () => {
       if (isProductDetailOpen) {
         const modal = document.querySelector('#product-detail')
-        modal.focus()
+        modal?.focus()
       }
       if (!isCartProductsOpen && !isProductDetailOpen) {
         const modal = document.querySelector('#nav')
-        modal.focus()
+        modal?.focus()
       }
       if (isCartProductsOpen) {
         const modal = document.querySelector('#cart')
-        modal.focus()
+        modal?.focus()
       }
     }
     handleFocus()
