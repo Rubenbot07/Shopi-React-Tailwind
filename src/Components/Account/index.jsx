@@ -5,7 +5,7 @@ export const Account = () => {
     user
   } = useContext(ShoppingCartContext)
   return (
-    <section className='flex flex-col gap-6 pt-6'>
+    <section className='flex flex-col gap-6 pt-6 w-[90%] max-w-96'>
       <div className=''>
         <ul className='flex flex-col gap-3'>
           <li>
@@ -15,7 +15,7 @@ export const Account = () => {
             Email: <span className='font-semibold'>{user.email}</span>
           </li>
           <li>
-            Address: <span className='font-semibold'>{user.address}</span>
+            Address: <span className='font-semibold '>{user.address}</span>
           </li>
           <li>Password: <span className='font-semibold'>*********</span></li>
         </ul>

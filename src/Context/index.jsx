@@ -42,6 +42,22 @@ export const ShoppingCartProvider = ({ children }) => {
   const signOut = () => {
     location.reload()
   }
+  const signUp = (userName, userAddress, userEmail, userPassword) => {
+    if (localStorage.getItem(userEmail)) {
+      console.log('error')
+    } else {
+      setUser(
+        {
+          name: userName,
+          address: userAddress,
+          email: userEmail,
+          password: userPassword
+        }
+      )
+      console.log(user)
+      localStorage.setItem(userEmail, JSON.stringify(user))
+    }
+  }
   // Handle Product Detail
   const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
   const handleProductDetail = () => {
@@ -153,7 +169,8 @@ export const ShoppingCartProvider = ({ children }) => {
       setIsMenuOpen,
       signIn,
       user,
-      signOut
+      signOut,
+      signUp
     }}
     >
       {children}
