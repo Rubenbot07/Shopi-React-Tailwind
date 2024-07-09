@@ -22,7 +22,7 @@ export const SignInForm = () => {
     }
   }
   const manageSubmit = (e) => {
-    e.preventDefault('submit')
+    e.preventDefault()
     setTimeout(() => {
       if (!isSignIn) {
         setInvalidUser(true)

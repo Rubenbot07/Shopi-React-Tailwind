@@ -17,7 +17,7 @@ export const SignUpForm = () => {
   const passwordRef = useRef(null)
   const navigate = useNavigate()
   const manageSubmit = (e) => {
-    e.preventDefault('submit')
+    e.preventDefault()
   }
   const manageSignUp = (userName, userAddress, userEmail, userPassword) => {
     setUserExist(false)
