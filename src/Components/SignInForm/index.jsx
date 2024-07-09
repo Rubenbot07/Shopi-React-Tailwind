@@ -60,7 +60,7 @@ export const SignInForm = () => {
         />
         <div className='flex flex-col relative'>
           <label htmlFor='password' className='text-sm'>Password</label>
-          <div className='flex justify-between items-center gap-1 border border-gray-400 px-2 py-1 rounded-md text-sm dark:text-black mt-2'>
+          <div className='flex justify-between bg-white items-center gap-1 border border-gray-400 px-2 py-1 rounded-md text-sm dark:text-black mt-2'>
             <input
               ref={passwordRef}
               required
@@ -88,7 +88,7 @@ export const SignInForm = () => {
         <button
           type='submit'
           onClick={() => manageSignIn()}
-          className='bg-black text-white py-2 px-3 rounded-md mt-5 dark:bg-gray-300 dark:text-black w-full'
+          className='bg-black text-white py-2 px-3 rounded-md mt-5 dark:bg-gray-500 w-full'
         >
           {isLoading &&
             <span className='flex items-center justify-center'>

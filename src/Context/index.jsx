@@ -169,6 +169,7 @@ export const ShoppingCartProvider = ({ children }) => {
       setIsMenuOpen,
       signIn,
       user,
+      setUser,
       signOut,
       signUp,
       isLoading,

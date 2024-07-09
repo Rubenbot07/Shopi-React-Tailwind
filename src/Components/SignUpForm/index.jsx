@@ -83,7 +83,7 @@ export const SignUpForm = () => {
         <button
           onClick={() => manageSignUp(nameRef.current.value, addressRef.current.value, emailRef.current.value, passwordRef.current.value)}
           type='submit'
-          className='bg-black text-white py-2 px-3 rounded-md mt-5 dark:bg-green-400 dark:text-black'
+          className='bg-black text-white py-2 px-3 rounded-md mt-5 dark:bg-gray-500'
         >
           {isLoading &&
             <span className='flex items-center justify-center'>
@@ -94,7 +94,7 @@ export const SignUpForm = () => {
         <div className='flex gap-3 justify-center mt-4'>
           <span className='text-gray-400'>Already have an account? </span>
           <Link to='/sign-in'>
-            <span className='font-semibold text-gray-800 dark:text-green-400'>Sign In</span>
+            <span className='font-semibold text-gray-800 dark:text-white'>Sign In</span>
           </Link>
         </div>
       </form>

@@ -10,6 +10,7 @@ import SignUp from '../SignUp'
 import { Navbar } from '../../Components/Navbar'
 import { Footer } from '../../Components/Footer'
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
+import EditAcount from '../EditAccount/index.jsx'
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -22,7 +23,8 @@ const AppRoutes = () => {
     { path: '/my-account', element: <MyAccount /> },
     { path: '/sign-in', element: <SignIn /> },
     { path: '/sign-in/sign-up', element: <SignUp /> },
-    { path: '/*', element: <NotFound /> }
+    { path: '/*', element: <NotFound /> },
+    { path: '/my-account/edit-account', element: <EditAcount /> }
 
   ])
   return routes
