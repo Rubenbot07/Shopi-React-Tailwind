@@ -89,7 +89,7 @@ export const SignUpForm = () => {
             <span className='flex items-center justify-center'>
               <ReactLoading type='spin' color='#fff' height={25} width={25} />
             </span>}
-          {!isLoading && 'Sign up'}
+          {!isLoading && 'Create'}
         </button>
         <div className='flex gap-3 justify-center mt-4'>
           <span className='text-gray-400'>Already have an account? </span>

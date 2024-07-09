@@ -34,7 +34,6 @@ export const ShoppingCartProvider = ({ children }) => {
   const signIn = (userEmail, userPassword) => {
     const userParse = JSON.parse(localStorage.getItem(userEmail))
     if (localStorage.getItem(userEmail) && userParse.password === userPassword) {
-      console.log('great')
       setUser(userParse)
       setIsSignIn(true)
     }
@@ -46,7 +45,6 @@ export const ShoppingCartProvider = ({ children }) => {
   }
   const signUp = (userName, userAddress, userEmail, userPassword) => {
     if (localStorage.getItem(userEmail)) {
-      console.log('error')
       setUserExist(true)
     } else {
       setUser(

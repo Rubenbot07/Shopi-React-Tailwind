@@ -17,7 +17,6 @@ export const SignInForm = () => {
   const [invalidUser, setInvalidUser] = useState(false)
   const manageSignIn = () => {
     signIn(emailRef.current.value, passwordRef.current.value)
-    console.log(emailRef.current.value, passwordRef.current.value)
     if (emailRef.current.value.length && passwordRef.current.value > 0) {
       setIsLoading(true)
     }

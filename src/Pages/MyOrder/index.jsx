@@ -18,7 +18,7 @@ function MyOrder () {
     <Layout>
       <div className='w-2/3 max-w-[700px] min-w-80 flex flex-col items-center gap-5 pb-12'>
         <div className='flex items-center justify-center relative w-2/3 max-w-[700px] min-w-80'>
-          <Link to='/my-orders' tabIndex={0} onKeyDown={console.log('hola')} className='w-6 h-6 absolute left-0'>
+          <Link to='/my-orders' tabIndex={0} className='w-6 h-6 absolute left-0'>
             <span className='absolute left-4 top-1'>
               <FaChevronLeft
                 size='20px'
